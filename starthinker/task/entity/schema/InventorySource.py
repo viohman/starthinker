@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,36 +17,44 @@
 ###########################################################################
 
 InventorySource_Schema = [
-  { "name":"id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"unclassified",
-    "type":"BOOLEAN",
-    "mode":"NULLABLE",
-  },
-  { "name":"inventory_name",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"exchange_id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"external_id",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"min_cpm_micros",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"min_cpm_currency_code",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"accessing_advertisers",
-    "type":"INTEGER",
-    "mode":"REPEATED",
-  },
+    {
+        'name': 'id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'unclassified',
+        'type': 'BOOLEAN',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'inventory_name',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'exchange_id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'external_id',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'min_cpm_micros',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'min_cpm_currency_code',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'accessing_advertisers',
+        'type': 'INTEGER',
+        'mode': 'REPEATED',
+    },
 ]

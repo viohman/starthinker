@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,66 +17,89 @@
 ###########################################################################
 
 UserList_Schema = [
-  { "name":"id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"name",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"data_partner_id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"accessing_advertisers",
-    "type":"INTEGER",
-    "mode":"REPEATED",
-  },
-  { "name":"partner_pricing",
-    "type":"RECORD",
-    "mode":"NULLABLE",
-    "fields":[
-      { "name":"cost_type",
-        "type":"STRING",
-        "mode":"NULLABLE",
-      },
-      { "name":"currency_code",
-        "type":"STRING",
-        "mode":"NULLABLE",
-      },
-      { "name":"cost_micros",
-        "type":"INTEGER",
-        "mode":"NULLABLE",
-      },
-    ]
-  },
-  { "name":"advertiser_pricings",
-    "type":"RECORD",
-    "mode":"REPEATED",
-    "fields":[
-      { "name":"pricing",
-        "type":"RECORD",
-        "mode":"NULLABLE",
-        "fields":[
-          { "name":"cost_type",
-            "type":"STRING",
-            "mode":"NULLABLE",
-          },
-          { "name":"currency_code",
-            "type":"STRING",
-            "mode":"NULLABLE",
-          },
-          { "name":"cost_micros",
-            "type":"INTEGER",
-            "mode":"NULLABLE",
-          },
+    {
+        'name': 'id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'name',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'data_partner_id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'accessing_advertisers',
+        'type': 'INTEGER',
+        'mode': 'REPEATED',
+    },
+    {
+        'name':
+            'partner_pricing',
+        'type':
+            'RECORD',
+        'mode':
+            'NULLABLE',
+        'fields': [
+            {
+                'name': 'cost_type',
+                'type': 'STRING',
+                'mode': 'NULLABLE',
+            },
+            {
+                'name': 'currency_code',
+                'type': 'STRING',
+                'mode': 'NULLABLE',
+            },
+            {
+                'name': 'cost_micros',
+                'type': 'INTEGER',
+                'mode': 'NULLABLE',
+            },
         ]
-      },
-      { "name":"advertiser_id",
-        "type":"INTEGER",
-        "mode":"NULLABLE",
-      },
-    ]
-  },
+    },
+    {
+        'name':
+            'advertiser_pricings',
+        'type':
+            'RECORD',
+        'mode':
+            'REPEATED',
+        'fields': [
+            {
+                'name':
+                    'pricing',
+                'type':
+                    'RECORD',
+                'mode':
+                    'NULLABLE',
+                'fields': [
+                    {
+                        'name': 'cost_type',
+                        'type': 'STRING',
+                        'mode': 'NULLABLE',
+                    },
+                    {
+                        'name': 'currency_code',
+                        'type': 'STRING',
+                        'mode': 'NULLABLE',
+                    },
+                    {
+                        'name': 'cost_micros',
+                        'type': 'INTEGER',
+                        'mode': 'NULLABLE',
+                    },
+                ]
+            },
+            {
+                'name': 'advertiser_id',
+                'type': 'INTEGER',
+                'mode': 'NULLABLE',
+            },
+        ]
+    },
 ]

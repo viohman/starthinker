@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google LLC
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -28,15 +28,19 @@ from starthinker_ui.account.apps import USER_BUCKET
 
 
 def fix_picture(picture_url):
-  return picture_url.replace('/photo.jpg', '/s32-c/photo.jpg') 
+  return picture_url.replace('/photo.jpg', '/s32-c/photo.jpg')
 
 
 def token_generate(model_class, model_field, length=8):
   token = None
-  while not token: 
-    token = ''.join([choice('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') for i in range(length)])
+  while not token:
+    token = ''.join([
+        choice('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')
+        for i in range(length)
+    ])
     try:
-      if model_class.objects.filter(**{model_field:token}).exists(): token = None
+      if model_class.objects.filter(**{model_field: token}).exists():
+        token = None
     except Exception:
       pass
   return token
@@ -50,16 +54,17 @@ def get_profile(credentials):
 class AccountManager(BaseUserManager):
 
   def create_user(self, credentials=None, password=None, profile=None):
-    if profile is None: profile = get_profile(credentials)
+    if profile is None:
+      profile = get_profile(credentials)
 
     account = self.model(
-      identifier=profile['id'], 
-      email=self.normalize_email(profile['email']),
-      name=profile['given_name'],
-      domain=profile.get('hd', ''),
-      picture=fix_picture(profile['picture']),
+        identifier=profile['id'],
+        email=self.normalize_email(profile['email']),
+        name=profile['given_name'],
+        domain=profile.get('hd', ''),
+        picture=fix_picture(profile['picture']),
     )
-    account.set_credentials(credentials) 
+    account.set_credentials(credentials)
     account.set_password(password)
     account.save(using=self._db)
     return account
@@ -67,11 +72,11 @@ class AccountManager(BaseUserManager):
   def get_or_create_user(self, credentials=None, password=None):
     profile = get_profile(credentials)
 
-    try: 
+    try:
       account = Account.objects.get(identifier=profile['id'])
       account.email = self.normalize_email(profile['email'])
       account.name = profile['given_name']
-      domain=profile.get('hd', ''),
+      domain = profile.get('hd', ''),
       account.picture = fix_picture(profile['picture'])
       account.set_credentials(credentials)
       account.set_password(password)
@@ -145,10 +150,11 @@ class Account(AbstractBaseUser):
     if self.identifier and credentials.refresh_token:
       buffer = CredentialsUserWrapper()
       buffer.from_credentials(credentials)
-      buffer.save(self.get_credentials_path()) 
+      buffer.save(self.get_credentials_path())
 
   def get_credentials(self):
-    return CredentialsUserWrapper(self.get_credentials_path()) if self.identifier else None
+    return CredentialsUserWrapper(
+        self.get_credentials_path()) if self.identifier else None
 
   def get_credentials_path(self):
     return '%s:ui/%s.json' % (USER_BUCKET, self.identifier)

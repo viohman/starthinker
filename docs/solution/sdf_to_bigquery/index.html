@@ -27,7 +27,7 @@
 
     <style>
       html { color: rgba(68,68,68,1); font-family: Roboto, sans-serif; }
- 
+
       .material-icons { line-height: normal; vertical-align: middle; }
 
       #message { justify-content: center; font-size: 2em;}
@@ -63,7 +63,7 @@
 
       
   #solution_image { margin: 30px auto; width: 80%; max-width: 800px; height: auto; display: block; }
-  .btn-large { margin: 1vh 1vw; } 
+  .btn-large { margin: 1vh 1vw; }
   .col { margin-right: auto; }
   pre.expand_code { height: 70vh; overflow: hidden; }
   pre.expand_code span { position: absolute; right: 0px; margin: 15px; cursor: pointer; }
@@ -81,7 +81,7 @@
           <img src="https://storage.googleapis.com/starthinker-ui/StarThinker.png"/>&nbsp;StarThinker
         </a>
         <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-  
+
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           
           
@@ -91,7 +91,7 @@
         </ul>
       </div>
     </nav>
-  
+
     <ul class="sidenav green lighten-1" id="mobile-menu">
       
       
@@ -180,7 +180,7 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
 
   <div class="row">
     
-  
+
     
 
     <div class="col s12 m6 l4">
@@ -192,18 +192,18 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
             </tr>
            </thead>
           <tbody>
-    
+
             
             <tr>
               <td colspan="2">This solution has anonymized data and is OK to share with clients.</td>
             </tr>
             
-    
+
             <tr>
               <td>Age</td>
-              <td>March 8, 2019 (1 year, 4 months)</td>
+              <td>March 8, 2019 (1 year, 6 months)</td>
             </tr>
-    
+
             <tr>
               <td>Authors</td>
               <td><a href="mailto:terwilleger@google.com?subject=Request+For+A+SDF+Download+StarThinker+Solution&body=Hi%2C%0A%0AI%27d+like+to+learn+more+about+the+SDF+Download+solution.%0A%0AStarThinker+Link%3A+http%3A%2F%2Flocalhost%3A8000%2Fsolution%2Fsdf_to_bigquery%2F%0A%0ACan+we+set+up+some+time+to+over+it%3F%0A%0AThanks" target="_blank">terwilleger@google.com</a>
@@ -214,7 +214,7 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
         </table>
       </div>
     </div>
-    
+
    
       <div class="col s12 m6 l4">
         <div class="card">
@@ -255,18 +255,18 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
             "auth": {
                 "field": {
                     "name": "auth_write",
-                    "kind": "authentication",
                     "order": 1,
                     "default": "service",
+                    "kind": "authentication",
                     "description": "Credentials used for writing data."
                 }
             },
             "dataset": {
                 "field": {
                     "name": "dataset",
-                    "kind": "string",
                     "order": 6,
                     "default": "",
+                    "kind": "string",
                     "description": "Dataset to be written to in BigQuery."
                 }
             }
@@ -274,18 +274,20 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
     },
     {
         "<a href="https://github.com/google/starthinker/tree/master/starthinker/task/sdf/run.py" target="_blank">sdf</a>": {
-            "auth": "user",
-            "version": {
+            "filter_type": {
                 "field": {
-                    "name": "version",
-                    "kind": "choice",
-                    "order": 6,
-                    "default": "5",
-                    "description": "The sdf version to be returned.",
+                    "default": "",
                     "choices": [
-                        "SDF_VERSION_5",
-                        "SDF_VERSION_5_1"
-                    ]
+                        "FILTER_TYPE_ADVERTISER_ID",
+                        "FILTER_TYPE_CAMPAIGN_ID",
+                        "FILTER_TYPE_INSERTION_ORDER_ID",
+                        "FILTER_TYPE_MEDIA_PRODUCT_ID",
+                        "FILTER_TYPE_LINE_ITEM_ID"
+                    ],
+                    "order": 3,
+                    "name": "filter_type",
+                    "description": "The filter type for the filter ids.",
+                    "kind": "choice"
                 }
             },
             "partner_id": {
@@ -299,75 +301,73 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
             "file_types": {
                 "field": {
                     "name": "file_types",
-                    "kind": "string_list",
                     "order": 2,
                     "default": [],
+                    "kind": "string_list",
                     "description": "The sdf file types."
                 }
             },
-            "filter_type": {
+            "time_partitioned_table": {
                 "field": {
-                    "name": "filter_type",
-                    "kind": "choice",
-                    "order": 3,
-                    "default": "",
-                    "description": "The filter type for the filter ids.",
-                    "choices": [
-                        "FILTER_TYPE_ADVERTISER_ID",
-                        "FILTER_TYPE_CAMPAIGN_ID",
-                        "FILTER_TYPE_INSERTION_ORDER_ID",
-                        "FILTER_TYPE_MEDIA_PRODUCT_ID",
-                        "FILTER_TYPE_LINE_ITEM_ID"
-                    ]
+                    "name": "time_partitioned_table",
+                    "order": 7,
+                    "default": false,
+                    "kind": "boolean",
+                    "description": "Is the end table a time partitioned"
                 }
             },
+            "dataset": {
+                "field": {
+                    "name": "dataset",
+                    "order": 6,
+                    "default": "",
+                    "kind": "string",
+                    "description": "Dataset to be written to in BigQuery."
+                }
+            },
+            "version": {
+                "field": {
+                    "default": "5",
+                    "choices": [
+                        "SDF_VERSION_5",
+                        "SDF_VERSION_5_1"
+                    ],
+                    "order": 6,
+                    "name": "version",
+                    "description": "The sdf version to be returned.",
+                    "kind": "choice"
+                }
+            },
+            "create_single_day_table": {
+                "field": {
+                    "name": "create_single_day_table",
+                    "order": 8,
+                    "default": false,
+                    "kind": "boolean",
+                    "description": "Would you like a separate table for each day? This will result in an extra table each day and the end table with the most up to date SDF."
+                }
+            },
+            "auth": "user",
             "read": {
                 "filter_ids": {
                     "single_cell": true,
                     "values": {
                         "field": {
                             "name": "filter_ids",
-                            "kind": "integer_list",
                             "order": 4,
                             "default": [],
+                            "kind": "integer_list",
                             "description": "Comma separated list of filter ids for the request."
                         }
                     }
                 }
             },
-            "time_partitioned_table": {
-                "field": {
-                    "name": "time_partitioned_table",
-                    "kind": "boolean",
-                    "order": 7,
-                    "default": false,
-                    "description": "Is the end table a time partitioned"
-                }
-            },
-            "create_single_day_table": {
-                "field": {
-                    "name": "create_single_day_table",
-                    "kind": "boolean",
-                    "order": 8,
-                    "default": false,
-                    "description": "Would you like a separate table for each day? This will result in an extra table each day and the end table with the most up to date SDF."
-                }
-            },
-            "dataset": {
-                "field": {
-                    "name": "dataset",
-                    "kind": "string",
-                    "order": 6,
-                    "default": "",
-                    "description": "Dataset to be written to in BigQuery."
-                }
-            },
             "table_suffix": {
                 "field": {
                     "name": "table_suffix",
-                    "kind": "string",
                     "order": 6,
                     "default": "",
+                    "kind": "string",
                     "description": "Optional: Suffix string to put at the end of the table name (Must contain alphanumeric or underscores)"
                 }
             }

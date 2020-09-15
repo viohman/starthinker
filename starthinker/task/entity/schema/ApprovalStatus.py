@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,24 +17,29 @@
 ###########################################################################
 
 ApprovalStatus_Schema = [
-  { "name":"auditor",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"status",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"feedback",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"sync_time",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"external_id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
+    {
+        'name': 'auditor',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'status',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'feedback',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'sync_time',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'external_id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
 ]

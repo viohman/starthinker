@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2018 Google LLC
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 #
 ###########################################################################
 
-
 import argparse
 import textwrap
 
@@ -27,16 +26,17 @@ from starthinker.util.dbm import lineitem_read
 def main():
 
   parser = argparse.ArgumentParser(
-    formatter_class=argparse.RawDescriptionHelpFormatter,
-    description=textwrap.dedent('''\
+      formatter_class=argparse.RawDescriptionHelpFormatter,
+      description=textwrap.dedent("""\
       Command line interface for fetching line items via legacy API.
       Helps developers quickly debug lineitem issues or permissions access issues.
 
       Example: python helper.py [line item id] -u [user credentials]
-  '''))
+  """))
 
   parser = argparse.ArgumentParser()
-  parser.add_argument('lineitem', help='lineitem ID to pull schema, or "list" to get index')
+  parser.add_argument(
+      'lineitem', help='lineitem ID to pull schema, or "list" to get index')
 
   # initialize project
   project.from_commandline(parser=parser, arguments=('-u', '-c', '-s', '-v'))
@@ -47,5 +47,5 @@ def main():
     print(row)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   main()

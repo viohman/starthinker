@@ -27,7 +27,7 @@
 
     <style>
       html { color: rgba(68,68,68,1); font-family: Roboto, sans-serif; }
- 
+
       .material-icons { line-height: normal; vertical-align: middle; }
 
       #message { justify-content: center; font-size: 2em;}
@@ -63,7 +63,7 @@
 
       
   #solution_image { margin: 30px auto; width: 80%; max-width: 800px; height: auto; display: block; }
-  .btn-large { margin: 1vh 1vw; } 
+  .btn-large { margin: 1vh 1vw; }
   .col { margin-right: auto; }
   pre.expand_code { height: 70vh; overflow: hidden; }
   pre.expand_code span { position: absolute; right: 0px; margin: 15px; cursor: pointer; }
@@ -81,7 +81,7 @@
           <img src="https://storage.googleapis.com/starthinker-ui/StarThinker.png"/>&nbsp;StarThinker
         </a>
         <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-  
+
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           
           
@@ -91,7 +91,7 @@
         </ul>
       </div>
     </nav>
-  
+
     <ul class="sidenav green lighten-1" id="mobile-menu">
       
       
@@ -211,7 +211,7 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
         </div>
       </div>
     
-  
+
     
       <div class="col s12 m6 l4">
         <div class="card">
@@ -223,6 +223,33 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
               </tr>
              </thead>
                <tbody>
+               
+                 <tr>
+                   <td>Csat Improvement</td>
+                   <td>
+                     <div class="progress">
+                       <div class="determinate" style="width: 90%"></div>
+                     </div>
+                   </td>
+                 </tr>
+               
+                 <tr>
+                   <td>Account Health</td>
+                   <td>
+                     <div class="progress">
+                       <div class="determinate" style="width: 0%"></div>
+                     </div>
+                   </td>
+                 </tr>
+               
+                 <tr>
+                   <td>Time Savings</td>
+                   <td>
+                     <div class="progress">
+                       <div class="determinate" style="width: 90%"></div>
+                     </div>
+                   </td>
+                 </tr>
                
                  <tr>
                    <td>Spend Optimization</td>
@@ -242,37 +269,10 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
                    </td>
                  </tr>
                
-                 <tr>
-                   <td>Time Savings</td>
-                   <td>
-                     <div class="progress">
-                       <div class="determinate" style="width: 90%"></div>
-                     </div>
-                   </td>
-                 </tr>
-               
-                 <tr>
-                   <td>Account Health</td>
-                   <td>
-                     <div class="progress">
-                       <div class="determinate" style="width: 0%"></div>
-                     </div>
-                   </td>
-                 </tr>
-               
-                 <tr>
-                   <td>Csat Improvement</td>
-                   <td>
-                     <div class="progress">
-                       <div class="determinate" style="width: 90%"></div>
-                     </div>
-                   </td>
-                 </tr>
-               
              </tbody>
           </table>
-        </div> 
-      </div> 
+        </div>
+      </div>
     
 
     <div class="col s12 m6 l4">
@@ -284,18 +284,18 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
             </tr>
            </thead>
           <tbody>
-    
+
             
             <tr>
               <td colspan="2">This solution has anonymized data and is OK to share with clients.</td>
             </tr>
             
-    
+
             <tr>
               <td>Age</td>
-              <td>April 22, 2020 (3 months, 1 week)</td>
+              <td>April 22, 2020 (4 months, 3 weeks)</td>
             </tr>
-    
+
             <tr>
               <td>Authors</td>
               <td><a href="mailto:mauriciod@google.com?subject=Request+For+A+%5BDV-3PO%5D+Custom+Signals+StarThinker+Solution&body=Hi%2C%0A%0AI%27d+like+to+learn+more+about+the+%5BDV-3PO%5D+Custom+Signals+solution.%0A%0AStarThinker+Link%3A+http%3A%2F%2Flocalhost%3A8000%2Fsolution%2Fdv3po_custom_signals%2F%0A%0ACan+we+set+up+some+time+to+over+it%3F%0A%0AThanks" target="_blank">mauriciod@google.com</a>
@@ -306,7 +306,7 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
         </table>
       </div>
     </div>
-    
+
    
       <div class="col s12 m6 l4">
         <div class="card">
@@ -364,61 +364,61 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
       <pre class="card expand_code left-align"><span class="expand_code waves-light">Workflow<i class="material-icons medium">expand_more</i></span><code class="language-json">[
     {
         "<a href="https://github.com/google/starthinker/tree/master/starthinker/task/weather_gov/run.py" target="_blank">weather_gov</a>": {
-            "auth": "user",
             "stations": {
                 "field": {
                     "name": "station_ids",
-                    "kind": "string_list",
                     "order": 1,
-                    "description": "NOAA Weather Station ID",
-                    "default": ""
+                    "default": "",
+                    "kind": "string_list",
+                    "description": "NOAA Weather Station ID"
                 }
             },
             "out": {
                 "sheets": {
+                    "range": "A2:K",
+                    "tab": "Weather",
                     "sheet": {
                         "field": {
                             "name": "sheet_url",
-                            "kind": "string",
                             "order": 2,
-                            "description": "Feed Sheet URL",
-                            "default": ""
+                            "default": "",
+                            "kind": "string",
+                            "description": "Feed Sheet URL"
                         }
                     },
-                    "tab": "Weather",
-                    "range": "A2:K",
                     "delete": true
                 }
-            }
+            },
+            "auth": "user"
         }
     },
     {
         "<a href="https://github.com/google/starthinker/tree/master/starthinker/task/lineitem_beta/run.py" target="_blank">lineitem_beta</a>": {
-            "auth": {
-                "field": {
-                    "name": "auth_read",
-                    "kind": "authentication",
-                    "order": 1,
-                    "default": "user",
-                    "description": "Credentials used for reading data."
-                }
-            },
+            "patch": {},
             "read": {
                 "sheet": {
+                    "range": "A1:D",
                     "sheet": {
                         "field": {
                             "name": "sheet_url",
-                            "kind": "string",
                             "order": 2,
-                            "description": "Feed Sheet URL",
-                            "default": ""
+                            "default": "",
+                            "kind": "string",
+                            "description": "Feed Sheet URL"
                         }
                     },
-                    "tab": "Rules",
-                    "range": "A1:D"
+                    "tab": "Rules"
                 }
             },
-            "patch": {}
+            "auth": {
+                "field": {
+                    "name": "auth_read",
+                    "order": 1,
+                    "default": "user",
+                    "kind": "authentication",
+                    "description": "Credentials used for reading data."
+                }
+            }
         }
     }
 ]</code></pre>

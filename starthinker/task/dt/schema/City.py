@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,7 +16,12 @@
 #
 ###########################################################################
 
-City_Schema = [
-  { "name":"City", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"City_Id", "type":"INTEGER", "mode":"NULLABLE" }
-]
+City_Schema = [{
+    'name': 'City',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'City_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}]

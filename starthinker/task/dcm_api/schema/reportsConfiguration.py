@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,30 +16,24 @@
 #
 ###########################################################################
 
-reportsConfiguration_Schema = [
-  {
-    "name": "exposureToConversionEnabled",
-    "type": "BOOLEAN",
-    "mode": "NULLABLE"
-  },
-  [
-    {
-      "description": "",
-      "name": "clickDuration",
-      "type": "INT64",
-      "mode": "NULLABLE"
-    },
-    {
-      "description": "",
-      "name": "postImpressionActivitiesDuration",
-      "type": "INT64",
-      "mode": "NULLABLE"
-    }
-  ],
-  {
-    "description": "",
-    "name": "reportGenerationTimeZoneId",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  }
-]
+reportsConfiguration_Schema = [{
+    'name': 'exposureToConversionEnabled',
+    'type': 'BOOLEAN',
+    'mode': 'NULLABLE'
+},
+                               [{
+                                   'description': '',
+                                   'name': 'clickDuration',
+                                   'type': 'INT64',
+                                   'mode': 'NULLABLE'
+                               }, {
+                                   'description': '',
+                                   'name': 'postImpressionActivitiesDuration',
+                                   'type': 'INT64',
+                                   'mode': 'NULLABLE'
+                               }], {
+                                   'description': '',
+                                   'name': 'reportGenerationTimeZoneId',
+                                   'type': 'INT64',
+                                   'mode': 'NULLABLE'
+                               }]

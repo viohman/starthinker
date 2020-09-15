@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,58 +17,74 @@
 ###########################################################################
 
 Pixel_Schema = [
-  { "name":"common_data",
-    "type":"RECORD",
-    "mode":"NULLABLE",
-    "fields":[
-      { "name":"id",
-        "type":"INTEGER",
-        "mode":"NULLABLE",
-      },
-      { "name":"name",
-        "type":"STRING",
-        "mode":"NULLABLE",
-      },
-      { "name":"active",
-        "type":"BOOLEAN",
-        "mode":"NULLABLE",
-      },
-      { "name":"integration_code",
-        "type":"STRING",
-        "mode":"NULLABLE",
-      },
-    ]
-  },
-  { "name":"advertiser_id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"partner_id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"dcm_floodlight_id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"dcm_floodlight_name",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"allow_google_redirect",
-    "type":"BOOLEAN",
-    "mode":"NULLABLE",
-  },
-  { "name":"allow_rm_redirect",
-    "type":"BOOLEAN",
-    "mode":"NULLABLE",
-  },
-  { "name":"remarketing_enabled",
-    "type":"BOOLEAN",
-    "mode":"NULLABLE",
-  },
-  { "name":"is_secure",
-    "type":"BOOLEAN",
-    "mode":"NULLABLE",
-  },
+    {
+        'name':
+            'common_data',
+        'type':
+            'RECORD',
+        'mode':
+            'NULLABLE',
+        'fields': [
+            {
+                'name': 'id',
+                'type': 'INTEGER',
+                'mode': 'NULLABLE',
+            },
+            {
+                'name': 'name',
+                'type': 'STRING',
+                'mode': 'NULLABLE',
+            },
+            {
+                'name': 'active',
+                'type': 'BOOLEAN',
+                'mode': 'NULLABLE',
+            },
+            {
+                'name': 'integration_code',
+                'type': 'STRING',
+                'mode': 'NULLABLE',
+            },
+        ]
+    },
+    {
+        'name': 'advertiser_id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'partner_id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'dcm_floodlight_id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'dcm_floodlight_name',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'allow_google_redirect',
+        'type': 'BOOLEAN',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'allow_rm_redirect',
+        'type': 'BOOLEAN',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'remarketing_enabled',
+        'type': 'BOOLEAN',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'is_secure',
+        'type': 'BOOLEAN',
+        'mode': 'NULLABLE',
+    },
 ]

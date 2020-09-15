@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google Inc.
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -15,20 +15,18 @@
 #  limitations under the License.
 #
 ###########################################################################
-
-'''
---------------------------------------------------------------
+"""--------------------------------------------------------------
 
 Before running this Airflow module...
 
-  Install StarThinker in cloud composer from open source: 
+  Install StarThinker in cloud composer from open source:
 
     pip install git+https://github.com/google/starthinker
 
   Or push local code to the cloud composer plugins directory:
 
     source install/deploy.sh
-    4) Composer Menu	   
+    4) Composer Menu
     l) Install All
 
 --------------------------------------------------------------
@@ -45,95 +43,107 @@ Ensure this recipe runs after the report is email daily.
 Give a regular expression to match the email subject.
 Configure the destination in BigQuery to write the data.
 
-'''
+"""
 
 from starthinker_airflow.factory import DAG_Factory
- 
+
 # Add the following credentials to your Airflow configuration.
-USER_CONN_ID = "starthinker_user" # The connection to use for user authentication.
-GCP_CONN_ID = "starthinker_service" # The connection to use for service authentication.
+USER_CONN_ID = 'starthinker_user'  # The connection to use for user authentication.
+GCP_CONN_ID = 'starthinker_service'  # The connection to use for service authentication.
 
 INPUTS = {
-  'auth_read': 'user',  # Credentials used for reading data.
-  'email': '',  # Email address report was sent to.
-  'subject': '.*',  # Regular expression to match subject. Double escape backslashes.
-  'dataset': '',  # Existing dataset in BigQuery.
-  'table': '',  # Name of table to be written to.
-  'is_incremental_load': False,  # Append report data to table based on date column, de-duplicates.
+    'auth_read': 'user',  # Credentials used for reading data.
+    'email': '',  # Email address report was sent to.
+    'subject':
+        '.*',  # Regular expression to match subject. Double escape backslashes.
+    'dataset': '',  # Existing dataset in BigQuery.
+    'table': '',  # Name of table to be written to.
+    'is_incremental_load':
+        False,  # Append report data to table based on date column, de-duplicates.
 }
 
-TASKS = [
-  {
+TASKS = [{
     'email': {
-      'auth': {
-        'field': {
-          'name': 'auth_read',
-          'kind': 'authentication',
-          'order': 1,
-          'default': 'user',
-          'description': 'Credentials used for reading data.'
-        }
-      },
-      'read': {
-        'from': 'noreply-cm@google.com',
-        'to': {
-          'field': {
-            'name': 'email',
-            'kind': 'string',
-            'order': 1,
-            'default': '',
-            'description': 'Email address report was sent to.'
-          }
-        },
-        'subject': {
-          'field': {
-            'name': 'subject',
-            'kind': 'string',
-            'order': 2,
-            'default': '.*',
-            'description': 'Regular expression to match subject. Double escape backslashes.'
-          }
-        },
-        'attachment': '.*',
-        'out': {
-          'bigquery': {
-            'dataset': {
-              'field': {
-                'name': 'dataset',
-                'kind': 'string',
-                'order': 3,
-                'default': '',
-                'description': 'Existing dataset in BigQuery.'
-              }
-            },
-            'table': {
-              'field': {
-                'name': 'table',
-                'kind': 'string',
-                'order': 4,
-                'default': '',
-                'description': 'Name of table to be written to.'
-              }
-            },
-            'is_incremental_load': {
-              'field': {
-                'name': 'is_incremental_load',
-                'kind': 'boolean',
-                'order': 6,
-                'default': False,
-                'description': 'Append report data to table based on date column, de-duplicates.'
-              }
+        'auth': {
+            'field': {
+                'description': 'Credentials used for reading data.',
+                'name': 'auth_read',
+                'default': 'user',
+                'kind': 'authentication',
+                'order': 1
             }
-          }
+        },
+        'read': {
+            'subject': {
+                'field': {
+                    'description':
+                        'Regular expression to match subject. Double escape '
+                        'backslashes.',
+                    'name':
+                        'subject',
+                    'default':
+                        '.*',
+                    'kind':
+                        'string',
+                    'order':
+                        2
+                }
+            },
+            'to': {
+                'field': {
+                    'description': 'Email address report was sent to.',
+                    'name': 'email',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 1
+                }
+            },
+            'out': {
+                'bigquery': {
+                    'is_incremental_load': {
+                        'field': {
+                            'description':
+                                'Append report data to table based on date '
+                                'column, de-duplicates.',
+                            'name':
+                                'is_incremental_load',
+                            'default':
+                                False,
+                            'kind':
+                                'boolean',
+                            'order':
+                                6
+                        }
+                    },
+                    'dataset': {
+                        'field': {
+                            'description': 'Existing dataset in BigQuery.',
+                            'name': 'dataset',
+                            'default': '',
+                            'kind': 'string',
+                            'order': 3
+                        }
+                    },
+                    'table': {
+                        'field': {
+                            'description': 'Name of table to be written to.',
+                            'name': 'table',
+                            'default': '',
+                            'kind': 'string',
+                            'order': 4
+                        }
+                    }
+                }
+            },
+            'attachment': '.*',
+            'from': 'noreply-cm@google.com'
         }
-      }
     }
-  }
-]
+}]
 
-DAG_FACTORY = DAG_Factory('email_cm_to_bigquery', { 'tasks':TASKS }, INPUTS)
+DAG_FACTORY = DAG_Factory('email_cm_to_bigquery', {'tasks': TASKS}, INPUTS)
 DAG_FACTORY.apply_credentails(USER_CONN_ID, GCP_CONN_ID)
 DAG = DAG_FACTORY.execute()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   DAG_FACTORY.print_commandline()

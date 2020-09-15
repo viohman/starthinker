@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -15,9 +15,7 @@
 #  limitations under the License.
 #
 ###########################################################################
-"""Handles creation and updates of landing pages.
-
-"""
+"""Handles creation and updates of landing pages."""
 
 from starthinker.task.traffic.dao import BaseDAO
 from starthinker.task.traffic.feed import FieldMap

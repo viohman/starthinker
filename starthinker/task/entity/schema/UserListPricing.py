@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,16 +17,19 @@
 ###########################################################################
 
 UserListPricing_Schema = [
-  { "name":"cost_type",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"currency_code",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"cost_micros",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
+    {
+        'name': 'cost_type',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'currency_code',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'cost_micros',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
 ]

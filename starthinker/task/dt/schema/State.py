@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,7 +16,12 @@
 #
 ###########################################################################
 
-State_Schema = [
-  { "name":"Region", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Region_Full_Name", "type":"STRING", "mode":"NULLABLE" }
-]
+State_Schema = [{
+    'name': 'Region',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Region_Full_Name',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}]

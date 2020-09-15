@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,40 +17,49 @@
 ###########################################################################
 
 DeviceCriteria_Schema = [
-  { "name":"id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"name",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"criteria_type",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"is_mobile",
-    "type":"BOOLEAN",
-    "mode":"NULLABLE",
-  },
-  { "name":"mobile_brand_name",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"mobile_model_name",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"operating_system_id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"device_type",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"mobile_make_model_id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
+    {
+        'name': 'id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'name',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'criteria_type',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'is_mobile',
+        'type': 'BOOLEAN',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'mobile_brand_name',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'mobile_model_name',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'operating_system_id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'device_type',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'mobile_make_model_id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
 ]

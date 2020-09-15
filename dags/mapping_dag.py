@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google Inc.
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -15,20 +15,18 @@
 #  limitations under the License.
 #
 ###########################################################################
-
-'''
---------------------------------------------------------------
+"""--------------------------------------------------------------
 
 Before running this Airflow module...
 
-  Install StarThinker in cloud composer from open source: 
+  Install StarThinker in cloud composer from open source:
 
     pip install git+https://github.com/google/starthinker
 
   Or push local code to the cloud composer plugins directory:
 
     source install/deploy.sh
-    4) Composer Menu	   
+    4) Composer Menu
     l) Install All
 
 --------------------------------------------------------------
@@ -43,95 +41,93 @@ Follow the instructions in the tab to complete the mapping.
 The in table should have the columns you want to map.
 The out view will have the new columns created in the mapping.
 
-'''
+"""
 
 from starthinker_airflow.factory import DAG_Factory
- 
+
 # Add the following credentials to your Airflow configuration.
-USER_CONN_ID = "starthinker_user" # The connection to use for user authentication.
-GCP_CONN_ID = "starthinker_service" # The connection to use for service authentication.
+USER_CONN_ID = 'starthinker_user'  # The connection to use for user authentication.
+GCP_CONN_ID = 'starthinker_service'  # The connection to use for service authentication.
 
 INPUTS = {
-  'auth_read': 'user',  # Credentials used for reading data.
-  'sheet': '',
-  'tab': '',
-  'in_dataset': '',
-  'in_table': '',
-  'out_dataset': '',
-  'out_view': '',
+    'auth_read': 'user',  # Credentials used for reading data.
+    'sheet': '',
+    'tab': '',
+    'in_dataset': '',
+    'in_table': '',
+    'out_dataset': '',
+    'out_view': '',
 }
 
-TASKS = [
-  {
+TASKS = [{
     'mapping': {
-      'auth': {
-        'field': {
-          'name': 'auth_read',
-          'kind': 'authentication',
-          'order': 1,
-          'default': 'user',
-          'description': 'Credentials used for reading data.'
-        }
-      },
-      'sheet': {
-        'field': {
-          'name': 'sheet',
-          'kind': 'string',
-          'order': 1,
-          'default': ''
-        }
-      },
-      'tab': {
-        'field': {
-          'name': 'tab',
-          'kind': 'string',
-          'order': 2,
-          'default': ''
-        }
-      },
-      'in': {
-        'dataset': {
-          'field': {
-            'name': 'in_dataset',
-            'kind': 'string',
-            'order': 3,
-            'default': ''
-          }
+        'auth': {
+            'field': {
+                'description': 'Credentials used for reading data.',
+                'name': 'auth_read',
+                'default': 'user',
+                'kind': 'authentication',
+                'order': 1
+            }
         },
-        'table': {
-          'field': {
-            'name': 'in_table',
-            'kind': 'string',
-            'order': 4,
-            'default': ''
-          }
-        }
-      },
-      'out': {
-        'dataset': {
-          'field': {
-            'name': 'out_dataset',
-            'kind': 'string',
-            'order': 7,
-            'default': ''
-          }
+        'tab': {
+            'field': {
+                'name': 'tab',
+                'default': '',
+                'kind': 'string',
+                'order': 2
+            }
         },
-        'view': {
-          'field': {
-            'name': 'out_view',
-            'kind': 'string',
-            'order': 8,
-            'default': ''
-          }
+        'out': {
+            'view': {
+                'field': {
+                    'name': 'out_view',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 8
+                }
+            },
+            'dataset': {
+                'field': {
+                    'name': 'out_dataset',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 7
+                }
+            }
+        },
+        'in': {
+            'dataset': {
+                'field': {
+                    'name': 'in_dataset',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 3
+                }
+            },
+            'table': {
+                'field': {
+                    'name': 'in_table',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 4
+                }
+            }
+        },
+        'sheet': {
+            'field': {
+                'name': 'sheet',
+                'default': '',
+                'kind': 'string',
+                'order': 1
+            }
         }
-      }
     }
-  }
-]
+}]
 
-DAG_FACTORY = DAG_Factory('mapping', { 'tasks':TASKS }, INPUTS)
+DAG_FACTORY = DAG_Factory('mapping', {'tasks': TASKS}, INPUTS)
 DAG_FACTORY.apply_credentails(USER_CONN_ID, GCP_CONN_ID)
 DAG = DAG_FACTORY.execute()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   DAG_FACTORY.print_commandline()

@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,11 +16,28 @@
 #
 ###########################################################################
 
-Activity_Type_Schema = [
-  { "name":"Activity_Group", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Activity_Group_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Activity_Type", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Advertiser_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Floodlight_Config_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Account_Id", "type":"INTEGER", "mode":"NULLABLE" }
-]
+Activity_Type_Schema = [{
+    'name': 'Activity_Group',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Activity_Group_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Activity_Type',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Advertiser_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Floodlight_Config_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Account_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}]

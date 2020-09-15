@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,8 +16,16 @@
 #
 ###########################################################################
 
-Landing_Page_Url_Schema = [
-  { "name":"Landing_Page_Url", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Landing_Page_Url_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Account_Id", "type":"INTEGER", "mode":"NULLABLE" }
-]
+Landing_Page_Url_Schema = [{
+    'name': 'Landing_Page_Url',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Landing_Page_Url_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Account_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}]

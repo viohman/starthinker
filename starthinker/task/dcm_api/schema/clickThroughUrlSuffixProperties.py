@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,16 +16,13 @@
 #
 ###########################################################################
 
-clickThroughUrlSuffixProperties_Schema = [
-  {
-    "description": "",
-    "name": "clickThroughUrlSuffix",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "overrideInheritedSuffix",
-    "type": "BOOLEAN",
-    "mode": "NULLABLE"
-  }
-]
+clickThroughUrlSuffixProperties_Schema = [{
+    'description': '',
+    'name': 'clickThroughUrlSuffix',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'overrideInheritedSuffix',
+    'type': 'BOOLEAN',
+    'mode': 'NULLABLE'
+}]

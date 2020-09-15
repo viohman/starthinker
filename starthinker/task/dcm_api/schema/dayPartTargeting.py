@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,20 +16,16 @@
 #
 ###########################################################################
 
-dayPartTargeting_Schema = [
-  {
-    "name": "daysOfWeek",
-    "type": "STRING",
-    "mode": "REPEATED"
-  },
-  {
-    "name": "hoursOfDay",
-    "type": "INT64",
-    "mode": "REPEATED"
-  },
-  {
-    "name": "userLocalTime",
-    "type": "BOOLEAN",
-    "mode": "NULLABLE"
-  }
-]
+dayPartTargeting_Schema = [{
+    'name': 'daysOfWeek',
+    'type': 'STRING',
+    'mode': 'REPEATED'
+}, {
+    'name': 'hoursOfDay',
+    'type': 'INT64',
+    'mode': 'REPEATED'
+}, {
+    'name': 'userLocalTime',
+    'type': 'BOOLEAN',
+    'mode': 'NULLABLE'
+}]

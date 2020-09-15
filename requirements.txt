@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google LLC
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ google-api-python-client
 google-auth
 google-auth-oauthlib
 google-auth-httplib2
+google-cloud-bigquery
 pysftp
 pytz
 tzlocal
@@ -36,8 +37,7 @@ smartsheet-python-sdk
 # starthinker_ui
 wheel
 gunicorn
-uwsgi
 jsonpickle
-django==2.2.12
+django==2.2.13
 psycopg2-binary
 contextlib2

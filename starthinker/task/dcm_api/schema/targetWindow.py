@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,17 +16,14 @@
 #
 ###########################################################################
 
-targetWindow_Schema = [
-  {
-    "description": "",
-    "name": "customHtml",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "CURRENT_WINDOW, CUSTOM, NEW_WINDOW",
-    "name": "targetWindowOption",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  }
-]
+targetWindow_Schema = [{
+    'description': '',
+    'name': 'customHtml',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': 'CURRENT_WINDOW, CUSTOM, NEW_WINDOW',
+    'name': 'targetWindowOption',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}]

@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,27 +16,22 @@
 #
 ###########################################################################
 
-adBlockingConfiguration_Schema = [
-  {
-    "description": "",
-    "name": "clickThroughUrl",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "creativeBundleId",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "enabled",
-    "type": "BOOLEAN",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "overrideClickThroughUrl",
-    "type": "BOOLEAN",
-    "mode": "NULLABLE"
-  }
-]
+adBlockingConfiguration_Schema = [{
+    'description': '',
+    'name': 'clickThroughUrl',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'creativeBundleId',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'enabled',
+    'type': 'BOOLEAN',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'overrideClickThroughUrl',
+    'type': 'BOOLEAN',
+    'mode': 'NULLABLE'
+}]

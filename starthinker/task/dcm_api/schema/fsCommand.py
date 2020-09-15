@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,35 +16,29 @@
 #
 ###########################################################################
 
-fsCommand_Schema = [
-  {
-    "description": "",
-    "name": "left",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "CENTERED, DISTANCE_FROM_TOP_LEFT_CORNER",
-    "name": "positionOption",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "top",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "windowHeight",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "windowWidth",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  }
-]
+fsCommand_Schema = [{
+    'description': '',
+    'name': 'left',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'description': 'CENTERED, DISTANCE_FROM_TOP_LEFT_CORNER',
+    'name': 'positionOption',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'top',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'windowHeight',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'windowWidth',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}]

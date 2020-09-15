@@ -27,7 +27,7 @@
 
     <style>
       html { color: rgba(68,68,68,1); font-family: Roboto, sans-serif; }
- 
+
       .material-icons { line-height: normal; vertical-align: middle; }
 
       #message { justify-content: center; font-size: 2em;}
@@ -63,7 +63,7 @@
 
       
   #solution_image { margin: 30px auto; width: 80%; max-width: 800px; height: auto; display: block; }
-  .btn-large { margin: 1vh 1vw; } 
+  .btn-large { margin: 1vh 1vw; }
   .col { margin-right: auto; }
   pre.expand_code { height: 70vh; overflow: hidden; }
   pre.expand_code span { position: absolute; right: 0px; margin: 15px; cursor: pointer; }
@@ -81,7 +81,7 @@
           <img src="https://storage.googleapis.com/starthinker-ui/StarThinker.png"/>&nbsp;StarThinker
         </a>
         <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-  
+
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           
           
@@ -91,7 +91,7 @@
         </ul>
       </div>
     </nav>
-  
+
     <ul class="sidenav green lighten-1" id="mobile-menu">
       
       
@@ -215,7 +215,7 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
         </div>
       </div>
     
-  
+
     
       <div class="col s12 m6 l4">
         <div class="card">
@@ -227,6 +227,33 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
               </tr>
              </thead>
                <tbody>
+               
+                 <tr>
+                   <td>Csat Improvement</td>
+                   <td>
+                     <div class="progress">
+                       <div class="determinate" style="width: 70%"></div>
+                     </div>
+                   </td>
+                 </tr>
+               
+                 <tr>
+                   <td>Account Health</td>
+                   <td>
+                     <div class="progress">
+                       <div class="determinate" style="width: 60%"></div>
+                     </div>
+                   </td>
+                 </tr>
+               
+                 <tr>
+                   <td>Time Savings</td>
+                   <td>
+                     <div class="progress">
+                       <div class="determinate" style="width: 90%"></div>
+                     </div>
+                   </td>
+                 </tr>
                
                  <tr>
                    <td>Spend Optimization</td>
@@ -246,37 +273,10 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
                    </td>
                  </tr>
                
-                 <tr>
-                   <td>Time Savings</td>
-                   <td>
-                     <div class="progress">
-                       <div class="determinate" style="width: 90%"></div>
-                     </div>
-                   </td>
-                 </tr>
-               
-                 <tr>
-                   <td>Account Health</td>
-                   <td>
-                     <div class="progress">
-                       <div class="determinate" style="width: 60%"></div>
-                     </div>
-                   </td>
-                 </tr>
-               
-                 <tr>
-                   <td>Csat Improvement</td>
-                   <td>
-                     <div class="progress">
-                       <div class="determinate" style="width: 70%"></div>
-                     </div>
-                   </td>
-                 </tr>
-               
              </tbody>
           </table>
-        </div> 
-      </div> 
+        </div>
+      </div>
     
 
     <div class="col s12 m6 l4">
@@ -288,18 +288,18 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
             </tr>
            </thead>
           <tbody>
-    
+
             
             <tr>
               <td colspan="2">This solution has anonymized data and is OK to share with clients.</td>
             </tr>
             
-    
+
             <tr>
               <td>Age</td>
-              <td>June 4, 2018 (2 years, 1 month)</td>
+              <td>June 4, 2018 (2 years, 3 months)</td>
             </tr>
-    
+
             <tr>
               <td>Authors</td>
               <td><a href="mailto:kenjora@google.com?subject=Request+For+A+Twitter+Targeting+StarThinker+Solution&body=Hi%2C%0A%0AI%27d+like+to+learn+more+about+the+Twitter+Targeting+solution.%0A%0AStarThinker+Link%3A+http%3A%2F%2Flocalhost%3A8000%2Fsolution%2Ftwitter%2F%0A%0ACan+we+set+up+some+time+to+over+it%3F%0A%0AThanks" target="_blank">kenjora@google.com</a>
@@ -310,7 +310,7 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
         </table>
       </div>
     </div>
-    
+
    
       <div class="col s12 m6 l4">
         <div class="card">
@@ -348,13 +348,12 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
       <pre class="card expand_code left-align"><span class="expand_code waves-light">Workflow<i class="material-icons medium">expand_more</i></span><code class="language-json">[
     {
         "<a href="https://github.com/google/starthinker/tree/master/starthinker/task/dataset/run.py" target="_blank">dataset</a>": {
-            "description": "Create a dataset where data will be combined and transfored for upload.",
             "auth": {
                 "field": {
                     "name": "auth_write",
-                    "kind": "authentication",
                     "order": 1,
                     "default": "service",
+                    "kind": "authentication",
                     "description": "Credentials used for writing data."
                 }
             },
@@ -365,196 +364,159 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
                     "order": 1,
                     "description": "Place where tables will be created in BigQuery."
                 }
-            }
+            },
+            "description": "Create a dataset where data will be combined and transfored for upload."
         }
     },
     {
         "<a href="https://github.com/google/starthinker/tree/master/starthinker/task/sheets/run.py" target="_blank">sheets</a>": {
-            "description": "Read mapping of hash tags to line item toggles from sheets.",
-            "auth": {
-                "field": {
-                    "name": "auth_read",
-                    "kind": "authentication",
-                    "order": 0,
-                    "default": "user",
-                    "description": "Credentials used for reading data."
-                }
-            },
             "template": {
                 "sheet": "https://docs.google.com/spreadsheets/d/1iYCGa2NKOZiL2mdT4yiDfV_SWV9C7SUosXdIr4NAEXE/edit?usp=sharing",
                 "tab": "Twitter Triggers"
             },
             "sheet": {
                 "field": {
-                    "name": "recipe_name",
-                    "kind": "string",
-                    "prefix": "Twitter Targeting For ",
+                    "default": "",
                     "order": 2,
                     "description": "Name of sheet where Line Item settings will be read from.",
-                    "default": ""
+                    "name": "recipe_name",
+                    "kind": "string",
+                    "prefix": "Twitter Targeting For "
                 }
             },
             "tab": "Twitter Triggers",
+            "description": "Read mapping of hash tags to line item toggles from sheets.",
             "range": "A8:T",
             "out": {
                 "bigquery": {
+                    "schema": [
+                        {
+                            "mode": "REQUIRED",
+                            "type": "STRING",
+                            "name": "Location"
+                        },
+                        {
+                            "mode": "REQUIRED",
+                            "type": "INTEGER",
+                            "name": "WOEID"
+                        },
+                        {
+                            "mode": "REQUIRED",
+                            "type": "STRING",
+                            "name": "Hashtag"
+                        },
+                        {
+                            "mode": "REQUIRED",
+                            "type": "INTEGER",
+                            "name": "Line_Item_Id"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_Name"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_Status"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_Start_Date"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_End_Date"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_Budget_Type"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_Budget_Amount"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_Pacing"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_Pacing_Rate"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_Pacing_Amount"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_Frequency_Enabled"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_Frequency_Exposures"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_Frequency_Period"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Line_Item_Frequency_Amount"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Bid_Price"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Partner_Revenue_Model"
+                        },
+                        {
+                            "mode": "NULLABLE",
+                            "type": "STRING",
+                            "name": "Partner_Revenue_Amount"
+                        }
+                    ],
+                    "table": "Twitter_Triggers",
                     "dataset": {
                         "field": {
                             "name": "recipe_slug",
                             "kind": "string",
                             "description": "Place where tables will be created in BigQuery."
                         }
-                    },
-                    "table": "Twitter_Triggers",
-                    "schema": [
-                        {
-                            "name": "Location",
-                            "type": "STRING",
-                            "mode": "REQUIRED"
-                        },
-                        {
-                            "name": "WOEID",
-                            "type": "INTEGER",
-                            "mode": "REQUIRED"
-                        },
-                        {
-                            "name": "Hashtag",
-                            "type": "STRING",
-                            "mode": "REQUIRED"
-                        },
-                        {
-                            "name": "Line_Item_Id",
-                            "type": "INTEGER",
-                            "mode": "REQUIRED"
-                        },
-                        {
-                            "name": "Line_Item_Name",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Line_Item_Status",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Line_Item_Start_Date",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Line_Item_End_Date",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Line_Item_Budget_Type",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Line_Item_Budget_Amount",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Line_Item_Pacing",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Line_Item_Pacing_Rate",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Line_Item_Pacing_Amount",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Line_Item_Frequency_Enabled",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Line_Item_Frequency_Exposures",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Line_Item_Frequency_Period",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Line_Item_Frequency_Amount",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Bid_Price",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Partner_Revenue_Model",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        },
-                        {
-                            "name": "Partner_Revenue_Amount",
-                            "type": "STRING",
-                            "mode": "NULLABLE"
-                        }
-                    ]
+                    }
+                }
+            },
+            "auth": {
+                "field": {
+                    "name": "auth_read",
+                    "order": 0,
+                    "default": "user",
+                    "kind": "authentication",
+                    "description": "Credentials used for reading data."
                 }
             }
         }
     },
     {
         "<a href="https://github.com/google/starthinker/tree/master/starthinker/task/twitter/run.py" target="_blank">twitter</a>": {
-            "description": "Read trends from Twitter and place into BigQuery.",
-            "auth": {
-                "field": {
-                    "name": "auth_write",
-                    "kind": "authentication",
-                    "order": 1,
-                    "default": "service",
-                    "description": "Credentials used for writing data."
-                }
-            },
-            "secret": {
-                "field": {
-                    "name": "twitter_secret",
-                    "kind": "string",
-                    "order": 3,
-                    "default": "",
-                    "description": "Twitter API secret token."
-                }
-            },
-            "key": {
-                "field": {
-                    "name": "twitter_key",
-                    "kind": "string",
-                    "order": 4,
-                    "default": "",
-                    "description": "Twitter API key token."
-                }
-            },
             "trends": {
                 "places": {
-                    "single_cell": true,
                     "bigquery": {
-                        "dataset": {
-                            "field": {
-                                "name": "recipe_slug",
-                                "kind": "string",
-                                "description": "Place where tables will be created in BigQuery."
-                            }
-                        },
-                        "query": "SELECT WOEID FROM {dataset}.Twitter_Triggers",
-                        "legacy": false,
                         "parameters": {
                             "dataset": {
                                 "field": {
@@ -563,48 +525,79 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
                                     "description": "Place where tables will be created in BigQuery."
                                 }
                             }
-                        }
-                    }
+                        },
+                        "query": "SELECT WOEID FROM {dataset}.Twitter_Triggers",
+                        "dataset": {
+                            "field": {
+                                "name": "recipe_slug",
+                                "kind": "string",
+                                "description": "Place where tables will be created in BigQuery."
+                            }
+                        },
+                        "legacy": false
+                    },
+                    "single_cell": true
                 }
             },
+            "secret": {
+                "field": {
+                    "name": "twitter_secret",
+                    "order": 3,
+                    "default": "",
+                    "kind": "string",
+                    "description": "Twitter API secret token."
+                }
+            },
+            "description": "Read trends from Twitter and place into BigQuery.",
             "out": {
                 "bigquery": {
+                    "table": "Twitter_Trends_Place",
                     "dataset": {
                         "field": {
                             "name": "recipe_slug",
                             "kind": "string",
                             "description": "Place where tables will be created in BigQuery."
                         }
-                    },
-                    "table": "Twitter_Trends_Place"
+                    }
+                }
+            },
+            "auth": {
+                "field": {
+                    "name": "auth_write",
+                    "order": 1,
+                    "default": "service",
+                    "kind": "authentication",
+                    "description": "Credentials used for writing data."
+                }
+            },
+            "key": {
+                "field": {
+                    "name": "twitter_key",
+                    "order": 4,
+                    "default": "",
+                    "kind": "string",
+                    "description": "Twitter API key token."
                 }
             }
         }
     },
     {
         "<a href="https://github.com/google/starthinker/tree/master/starthinker/task/lineitem/run.py" target="_blank">lineitem</a>": {
-            "description": "Read current lineitem settings from DV360 into BigQuery, so it can be joined with Twitter analysis.",
-            "auth": {
-                "field": {
-                    "name": "auth_read",
-                    "kind": "authentication",
-                    "order": 0,
-                    "default": "user",
-                    "description": "Credentials used for reading data."
-                }
-            },
             "read": {
-                "line_items": {
-                    "single_cell": true,
+                "out": {
                     "bigquery": {
+                        "table": "LineItem_Reads",
                         "dataset": {
                             "field": {
                                 "name": "recipe_slug",
                                 "kind": "string",
                                 "description": "Place where tables will be created in BigQuery."
                             }
-                        },
-                        "query": "SELECT Line_Item_Id FROM {dataset}.Twitter_Triggers",
+                        }
+                    }
+                },
+                "line_items": {
+                    "bigquery": {
                         "parameters": {
                             "dataset": {
                                 "field": {
@@ -613,38 +606,53 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
                                     "description": "Place where tables will be created in BigQuery."
                                 }
                             }
-                        }
-                    }
-                },
-                "out": {
-                    "bigquery": {
+                        },
+                        "query": "SELECT Line_Item_Id FROM {dataset}.Twitter_Triggers",
                         "dataset": {
                             "field": {
                                 "name": "recipe_slug",
                                 "kind": "string",
                                 "description": "Place where tables will be created in BigQuery."
                             }
-                        },
-                        "table": "LineItem_Reads"
-                    }
+                        }
+                    },
+                    "single_cell": true
                 }
-            }
+            },
+            "auth": {
+                "field": {
+                    "name": "auth_read",
+                    "order": 0,
+                    "default": "user",
+                    "kind": "authentication",
+                    "description": "Credentials used for reading data."
+                }
+            },
+            "description": "Read current lineitem settings from DV360 into BigQuery, so it can be joined with Twitter analysis."
         }
     },
     {
         "<a href="https://github.com/google/starthinker/tree/master/starthinker/task/bigquery/run.py" target="_blank">bigquery</a>": {
-            "description": "Get all triggered lineitmes from sheet, if they have a keyword match in twitter, take the triger values, else take the default values (default>trigger).  Take all non-null values from trigger and overlay over current DV360 values. Will be used to upload to DV360.",
+            "to": {
+                "view": "LineItem_Writes",
+                "dataset": {
+                    "field": {
+                        "name": "recipe_slug",
+                        "kind": "string",
+                        "description": "Place where tables will be created in BigQuery."
+                    }
+                }
+            },
             "auth": {
                 "field": {
                     "name": "auth_write",
-                    "kind": "authentication",
                     "order": 1,
                     "default": "service",
+                    "kind": "authentication",
                     "description": "Credentials used for writing data."
                 }
             },
             "from": {
-                "query": "SELECT o.Line_Item_Id AS Line_Item_Id, o.Partner_Name AS Partner_Name, o.Partner_Id AS Partner_Id, o.Advertiser_Name AS Advertiser_Name, o.IO_Name AS IO_Name, IFNULL(t.Line_Item_Name, o.Line_Item_Name) AS Line_Item_Name, o.Line_Item_Timestamp AS Line_Item_Timestamp , IFNULL(t.Line_Item_Status, o.Line_Item_Status) AS Line_Item_Status, o.IO_Start_Date AS IO_Start_Date, o.IO_End_Date AS IO_End_Date, o.IO_Budget_Type AS IO_Budget_Type, o.IO_Budget_Amount AS IO_Budget_Amount, o.IO_Pacing AS IO_Pacing, o.IO_Pacing_Rate AS IO_Pacing_Rate, o.IO_Pacing_Amount AS IO_Pacing_Amount, IFNULL(t.Line_Item_Start_Date, o.Line_Item_Start_Date) AS Line_Item_Start_Date, IFNULL(t.Line_Item_End_Date, o.Line_Item_End_Date) AS Line_Item_End_Date, IFNULL(t.Line_Item_Budget_Type, o.Line_Item_Budget_Type) AS Line_Item_Budget_Type, IFNULL(t.Line_Item_Budget_Amount, o.Line_Item_Budget_Amount) AS Line_Item_Budget_Amount, IFNULL(t.Line_Item_Pacing, o.Line_Item_Pacing) AS Line_Item_Pacing, IFNULL(t.Line_Item_Pacing_Rate, o.Line_Item_Pacing_Rate) AS Line_Item_Pacing_Rate, IFNULL(t.Line_Item_Pacing_Amount, o.Line_Item_Pacing_Amount) AS Line_Item_Pacing_Amount, IFNULL(t.Line_Item_Frequency_Enabled, o.Line_Item_Frequency_Enabled) AS Line_Item_Frequency_Enabled, IFNULL(t.Line_Item_Frequency_Exposures, o.Line_Item_Frequency_Exposures) AS Line_Item_Frequency_Exposures, IFNULL(t.Line_Item_Frequency_Period, o.Line_Item_Frequency_Period) AS Line_Item_Frequency_Period, IFNULL(t.Line_Item_Frequency_Amount, o.Line_Item_Frequency_Amount) AS Line_Item_Frequency_Amount, IFNULL(t.Bid_Price, o.Bid_Price) AS Bid_Price, IFNULL(t.Partner_Revenue_Model, o.Partner_Revenue_Model) AS Partner_Revenue_Model, IFNULL(t.Partner_Revenue_Amount, o.Partner_Revenue_Amount) AS Partner_Revenue_Amount, o.Current_Audience_Targeting_Ids AS Current_Audience_Targeting_Ids , o.Current_Audience_Targeting_Names AS Current_Audience_Targeting_Names FROM `{project}.{dataset}.LineItem_Reads` AS o LEFT JOIN ( SELECT Line_Item_Id, ANY_VALUE(SPLIT(Line_Item_Name, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Name, ANY_VALUE(SPLIT(Line_Item_Status, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Status, ANY_VALUE(SPLIT(Line_Item_Start_Date, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Start_Date, ANY_VALUE(SPLIT(Line_Item_End_Date, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_End_Date, ANY_VALUE(SPLIT(Line_Item_Budget_Type, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Budget_Type, ANY_VALUE(CAST(SPLIT(Line_Item_Budget_Amount, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))] AS FLOAT64)) AS Line_Item_Budget_Amount, ANY_VALUE(SPLIT(Line_Item_Pacing, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Pacing, ANY_VALUE(SPLIT(Line_Item_Pacing_Rate, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Pacing_Rate, ANY_VALUE(CAST(SPLIT(Line_Item_Pacing_Amount, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))] AS FLOAT64)) AS Line_Item_Pacing_Amount, ANY_VALUE(CAST(SPLIT(Line_Item_Frequency_Enabled, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))] AS BOOL)) AS Line_Item_Frequency_Enabled, ANY_VALUE(SPLIT(Line_Item_Frequency_Exposures, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Frequency_Exposures, ANY_VALUE(SPLIT(Line_Item_Frequency_Period, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Frequency_Period, ANY_VALUE(CAST(SPLIT(Line_Item_Frequency_Amount, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))] AS INT64)) AS Line_Item_Frequency_Amount, ANY_VALUE(CAST(SPLIT(Bid_Price, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))] AS FLOAT64)) AS Bid_Price, ANY_VALUE(SPLIT(Partner_Revenue_Model, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Partner_Revenue_Model, ANY_VALUE(CAST(SPLIT(Partner_Revenue_Amount, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))] AS FLOAT64)) AS Partner_Revenue_Amount FROM ( SELECT WOEID, Hashtag, Line_Item_Id, Line_Item_Name, Line_Item_Status, Line_Item_Start_Date, Line_Item_End_Date, Line_Item_Budget_Type, Line_Item_Budget_Amount, Line_Item_Pacing, Line_Item_Pacing_Rate, Line_Item_Pacing_Amount, Line_Item_Frequency_Enabled, Line_Item_Frequency_Exposures, Line_Item_Frequency_Period, Line_Item_Frequency_Amount, Bid_Price, Partner_Revenue_Model, Partner_Revenue_Amount, CONCAT(CAST(WOEID AS STRING), LOWER(Hashtag)) IN (SELECT CONCAT(CAST(WOEID AS STRING), LOWER(REPLACE(name, '#', ''))) FROM `{project}.{dataset}.Twitter_Trends_Place` GROUP BY 1) AS Triggered FROM `{project}.{dataset}.Twitter_Triggers`) GROUP BY 1) AS t ON o.Line_Item_Id=t.Line_Item_Id;",
                 "parameters": {
                     "project": {
                         "field": {
@@ -661,43 +669,17 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
                         }
                     }
                 },
+                "query": "SELECT o.Line_Item_Id AS Line_Item_Id, o.Partner_Name AS Partner_Name, o.Partner_Id AS Partner_Id, o.Advertiser_Name AS Advertiser_Name, o.IO_Name AS IO_Name, IFNULL(t.Line_Item_Name, o.Line_Item_Name) AS Line_Item_Name, o.Line_Item_Timestamp AS Line_Item_Timestamp , IFNULL(t.Line_Item_Status, o.Line_Item_Status) AS Line_Item_Status, o.IO_Start_Date AS IO_Start_Date, o.IO_End_Date AS IO_End_Date, o.IO_Budget_Type AS IO_Budget_Type, o.IO_Budget_Amount AS IO_Budget_Amount, o.IO_Pacing AS IO_Pacing, o.IO_Pacing_Rate AS IO_Pacing_Rate, o.IO_Pacing_Amount AS IO_Pacing_Amount, IFNULL(t.Line_Item_Start_Date, o.Line_Item_Start_Date) AS Line_Item_Start_Date, IFNULL(t.Line_Item_End_Date, o.Line_Item_End_Date) AS Line_Item_End_Date, IFNULL(t.Line_Item_Budget_Type, o.Line_Item_Budget_Type) AS Line_Item_Budget_Type, IFNULL(t.Line_Item_Budget_Amount, o.Line_Item_Budget_Amount) AS Line_Item_Budget_Amount, IFNULL(t.Line_Item_Pacing, o.Line_Item_Pacing) AS Line_Item_Pacing, IFNULL(t.Line_Item_Pacing_Rate, o.Line_Item_Pacing_Rate) AS Line_Item_Pacing_Rate, IFNULL(t.Line_Item_Pacing_Amount, o.Line_Item_Pacing_Amount) AS Line_Item_Pacing_Amount, IFNULL(t.Line_Item_Frequency_Enabled, o.Line_Item_Frequency_Enabled) AS Line_Item_Frequency_Enabled, IFNULL(t.Line_Item_Frequency_Exposures, o.Line_Item_Frequency_Exposures) AS Line_Item_Frequency_Exposures, IFNULL(t.Line_Item_Frequency_Period, o.Line_Item_Frequency_Period) AS Line_Item_Frequency_Period, IFNULL(t.Line_Item_Frequency_Amount, o.Line_Item_Frequency_Amount) AS Line_Item_Frequency_Amount, IFNULL(t.Bid_Price, o.Bid_Price) AS Bid_Price, IFNULL(t.Partner_Revenue_Model, o.Partner_Revenue_Model) AS Partner_Revenue_Model, IFNULL(t.Partner_Revenue_Amount, o.Partner_Revenue_Amount) AS Partner_Revenue_Amount, o.Current_Audience_Targeting_Ids AS Current_Audience_Targeting_Ids , o.Current_Audience_Targeting_Names AS Current_Audience_Targeting_Names FROM `{project}.{dataset}.LineItem_Reads` AS o LEFT JOIN ( SELECT Line_Item_Id, ANY_VALUE(SPLIT(Line_Item_Name, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Name, ANY_VALUE(SPLIT(Line_Item_Status, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Status, ANY_VALUE(SPLIT(Line_Item_Start_Date, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Start_Date, ANY_VALUE(SPLIT(Line_Item_End_Date, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_End_Date, ANY_VALUE(SPLIT(Line_Item_Budget_Type, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Budget_Type, ANY_VALUE(CAST(SPLIT(Line_Item_Budget_Amount, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))] AS FLOAT64)) AS Line_Item_Budget_Amount, ANY_VALUE(SPLIT(Line_Item_Pacing, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Pacing, ANY_VALUE(SPLIT(Line_Item_Pacing_Rate, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Pacing_Rate, ANY_VALUE(CAST(SPLIT(Line_Item_Pacing_Amount, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))] AS FLOAT64)) AS Line_Item_Pacing_Amount, ANY_VALUE(CAST(SPLIT(Line_Item_Frequency_Enabled, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))] AS BOOL)) AS Line_Item_Frequency_Enabled, ANY_VALUE(SPLIT(Line_Item_Frequency_Exposures, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Frequency_Exposures, ANY_VALUE(SPLIT(Line_Item_Frequency_Period, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Line_Item_Frequency_Period, ANY_VALUE(CAST(SPLIT(Line_Item_Frequency_Amount, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))] AS INT64)) AS Line_Item_Frequency_Amount, ANY_VALUE(CAST(SPLIT(Bid_Price, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))] AS FLOAT64)) AS Bid_Price, ANY_VALUE(SPLIT(Partner_Revenue_Model, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))]) AS Partner_Revenue_Model, ANY_VALUE(CAST(SPLIT(Partner_Revenue_Amount, '>')[SAFE_OFFSET(IF(Triggered, 1, 0))] AS FLOAT64)) AS Partner_Revenue_Amount FROM ( SELECT WOEID, Hashtag, Line_Item_Id, Line_Item_Name, Line_Item_Status, Line_Item_Start_Date, Line_Item_End_Date, Line_Item_Budget_Type, Line_Item_Budget_Amount, Line_Item_Pacing, Line_Item_Pacing_Rate, Line_Item_Pacing_Amount, Line_Item_Frequency_Enabled, Line_Item_Frequency_Exposures, Line_Item_Frequency_Period, Line_Item_Frequency_Amount, Bid_Price, Partner_Revenue_Model, Partner_Revenue_Amount, CONCAT(CAST(WOEID AS STRING), LOWER(Hashtag)) IN (SELECT CONCAT(CAST(WOEID AS STRING), LOWER(REPLACE(name, '#', ''))) FROM `{project}.{dataset}.Twitter_Trends_Place` GROUP BY 1) AS Triggered FROM `{project}.{dataset}.Twitter_Triggers`) GROUP BY 1) AS t ON o.Line_Item_Id=t.Line_Item_Id;",
                 "legacy": false
             },
-            "to": {
-                "dataset": {
-                    "field": {
-                        "name": "recipe_slug",
-                        "kind": "string",
-                        "description": "Place where tables will be created in BigQuery."
-                    }
-                },
-                "view": "LineItem_Writes"
-            }
+            "description": "Get all triggered lineitmes from sheet, if they have a keyword match in twitter, take the triger values, else take the default values (default>trigger).  Take all non-null values from trigger and overlay over current DV360 values. Will be used to upload to DV360."
         }
     },
     {
         "<a href="https://github.com/google/starthinker/tree/master/starthinker/task/lineitem/run.py" target="_blank">lineitem</a>": {
             "description": "Write lineitem settings to DV360 after transformation.",
-            "auth": {
-                "field": {
-                    "name": "auth_read",
-                    "kind": "authentication",
-                    "order": 0,
-                    "default": "user",
-                    "description": "Credentials used for reading data."
-                }
-            },
             "write": {
-                "dry_run": false,
                 "bigquery": {
-                    "dataset": {
-                        "field": {
-                            "name": "recipe_slug",
-                            "kind": "string",
-                            "description": "Place where tables will be created in BigQuery."
-                        }
-                    },
-                    "query": "Select * FROM {dataset}.LineItem_Writes",
                     "parameters": {
                         "dataset": {
                             "field": {
@@ -707,7 +689,25 @@ document.write('<img src="https://ad.doubleclick.net/ddm/activity/src=8657867;ty
                             }
                         }
                     },
+                    "query": "Select * FROM {dataset}.LineItem_Writes",
+                    "dataset": {
+                        "field": {
+                            "name": "recipe_slug",
+                            "kind": "string",
+                            "description": "Place where tables will be created in BigQuery."
+                        }
+                    },
                     "legacy": false
+                },
+                "dry_run": false
+            },
+            "auth": {
+                "field": {
+                    "name": "auth_read",
+                    "order": 0,
+                    "default": "user",
+                    "kind": "authentication",
+                    "description": "Credentials used for reading data."
                 }
             }
         }

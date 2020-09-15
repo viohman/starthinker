@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,29 +16,24 @@
 #
 ###########################################################################
 
-flight_Schema = [
-  {
-    "description": "",
-    "name": "endDate",
-    "type": "DATE",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "rateOrCost",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "startDate",
-    "type": "DATE",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "units",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  }
-]
+flight_Schema = [{
+    'description': '',
+    'name': 'endDate',
+    'type': 'DATE',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'rateOrCost',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'startDate',
+    'type': 'DATE',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'units',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}]

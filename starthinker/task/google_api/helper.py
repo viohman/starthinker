@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2018 Google LLC
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 #
 ###########################################################################
 
-
 import argparse
 import textwrap
 import pprint
@@ -29,42 +28,45 @@ from starthinker.util.google_api import API
 def main():
 
   parser = argparse.ArgumentParser(
-    formatter_class=argparse.RawDescriptionHelpFormatter,
-    description=textwrap.dedent('''\
+      formatter_class=argparse.RawDescriptionHelpFormatter,
+      description=textwrap.dedent("""\
       Command line interface for running Google API calls.  Any API works.  Allows developers to quickly test
       and debug API calls before building them into scripts.  Useful for debugging permission or call errors.
-      
+
       Examples:
         - Pull a DBM report via API.
           - https://developers.google.com/bid-manager/v1/queries/getquery
-          - python google_api/helper.py -api doubleclickbidmanager -version v1 -function queries.getquery -kwargs '{ "queryId": 132865172 }' -u [credentials path] 
+          - python google_api/helper.py -api doubleclickbidmanager -version v1 -function queries.getquery -kwargs '{ "queryId": 132865172 }' -u [credentials path]
 
-        - Pull a list of placements: 
+        - Pull a list of placements:
           - https://developers.google.com/doubleclick-advertisers/v3.3/placements/list
           - python task/google_api/helper.py -api dfareporting -version v3.3 -function placements.list -kwargs '{ "profileId":2782211 }' -u [credentials path]
-      
-  '''))
+
+  """))
 
   # get parameters
   parser.add_argument('-api', help='api to run, name of product api')
   parser.add_argument('-version', help='version of api')
   parser.add_argument('-function', help='function to call in api')
   parser.add_argument('-uri', help='function to call in api', default=None)
-  parser.add_argument('-kwargs', help='kwargs to pass to function, json string of name:value pairs')
-  parser.add_argument('--iterate', help='set to true to force iteration', action='store_true')
+  parser.add_argument(
+      '-kwargs',
+      help='kwargs to pass to function, json string of name:value pairs')
+  parser.add_argument(
+      '--iterate', help='set to true to force iteration', action='store_true')
 
   # initialize project ( used to load standard credentials parameters )
   project.from_commandline(parser=parser, arguments=('-u', '-c', '-s', '-v'))
 
   # the api wrapper takes parameters as JSON
-  job = { 
-    "auth":'service' if project.args.service else 'user',
-    "api":project.args.api,
-    "version":project.args.version,
-    "function":project.args.function,
-    "uri":project.args.uri,
-    "kwargs":json.loads(project.args.kwargs),
-    "iterate":project.args.iterate,
+  job = {
+      'auth': 'service' if project.args.service else 'user',
+      'api': project.args.api,
+      'version': project.args.version,
+      'function': project.args.function,
+      'uri': project.args.uri,
+      'kwargs': json.loads(project.args.kwargs),
+      'iterate': project.args.iterate,
   }
 
   # run the API call
@@ -78,5 +80,5 @@ def main():
     pprint.PrettyPrinter().pprint(results)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   main()

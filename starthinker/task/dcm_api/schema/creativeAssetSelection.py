@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,36 +16,32 @@
 #
 ###########################################################################
 
-creativeAssetSelection_Schema = [
-  {
-    "description": "",
-    "name": "defaultAssetId",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "rules",
-    "type": "RECORD",
-    "mode": "REPEATED",
-    "fields": [
-      {
-        "description": "",
-        "name": "assetId",
-        "type": "INT64",
-        "mode": "NULLABLE"
-      },
-      {
-        "description": "",
-        "name": "name",
-        "type": "STRING",
-        "mode": "NULLABLE"
-      },
-      {
-        "description": "",
-        "name": "targetingTemplateId",
-        "type": "INT64",
-        "mode": "NULLABLE"
-      }
-    ]
-  }
-]
+creativeAssetSelection_Schema = [{
+    'description': '',
+    'name': 'defaultAssetId',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'name':
+        'rules',
+    'type':
+        'RECORD',
+    'mode':
+        'REPEATED',
+    'fields': [{
+        'description': '',
+        'name': 'assetId',
+        'type': 'INT64',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'name',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'targetingTemplateId',
+        'type': 'INT64',
+        'mode': 'NULLABLE'
+    }]
+}]

@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,36 +16,28 @@
 #
 ###########################################################################
 
-companionClickThroughOverride_Schema = [
-  [
-    {
-      "description": "",
-      "name": "computedClickThroughUrl",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "description": "",
-      "name": "customClickThroughUrl",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "defaultLandingPage",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    {
-      "description": "",
-      "name": "landingPageId",
-      "type": "INT64",
-      "mode": "NULLABLE"
-    }
-  ],
-  {
-    "description": "",
-    "name": "creativeId",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  }
-]
+companionClickThroughOverride_Schema = [[{
+    'description': '',
+    'name': 'computedClickThroughUrl',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'customClickThroughUrl',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'defaultLandingPage',
+    'type': 'BOOLEAN',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'landingPageId',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}], {
+    'description': '',
+    'name': 'creativeId',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}]

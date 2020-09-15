@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google Inc.
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@ from django.conf.urls import url
 from starthinker_ui.account import views
 
 urlpatterns = [
-  url(r'^oauth_callback/$', views.oauth_callback, name='account.oauth.callback'),
-  url(r'^logout/$', views.logout, name='account.logout'),
+    url(r'^oauth_callback/$',
+        views.oauth_callback,
+        name='account.oauth.callback'),
+    url(r'^logout/$', views.logout, name='account.logout'),
 ]

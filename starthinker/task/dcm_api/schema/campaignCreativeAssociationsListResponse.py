@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,36 +16,32 @@
 #
 ###########################################################################
 
-campaignCreativeAssociationsListResponse_Schema = [
-  {
-    "name": "campaignCreativeAssociations",
-    "type": "RECORD",
-    "mode": "REPEATED",
-    "fields": [
-      {
-        "description": "",
-        "name": "creativeId",
-        "type": "INT64",
-        "mode": "NULLABLE"
-      },
-      {
-        "description": "",
-        "name": "kind",
-        "type": "STRING",
-        "mode": "NULLABLE"
-      }
-    ]
-  },
-  {
-    "description": "",
-    "name": "kind",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "nextPageToken",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  }
-]
+campaignCreativeAssociationsListResponse_Schema = [{
+    'name':
+        'campaignCreativeAssociations',
+    'type':
+        'RECORD',
+    'mode':
+        'REPEATED',
+    'fields': [{
+        'description': '',
+        'name': 'creativeId',
+        'type': 'INT64',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'kind',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }]
+}, {
+    'description': '',
+    'name': 'kind',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'nextPageToken',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}]

@@ -1,5 +1,5 @@
 ###########################################################################
-# 
+#
 #  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,7 @@ from django.conf.urls import url
 from starthinker_ui.website import views
 
 urlpatterns = [
-  url(r'^help/$', views.help, name='website.help'),
-  url(r'^solution/$', views.solutions, name='website.solutions'),
-  url(r'^solution/(?P<tag>\w+)/$', views.solution, name='website.solution'),
+    url(r'^help/$', views.help, name='website.help'),
+    url(r'^solution/$', views.solutions, name='website.solutions'),
+    url(r'^solution/(?P<tag>\w+)/$', views.solution, name='website.solution'),
 ]

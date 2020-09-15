@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,10 +16,24 @@
 #
 ###########################################################################
 
-Custom_Floodlight_Variable_Schema = [
-  { "name":"Advertiser_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Floodlight_Config_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Floodlight_Variable_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Floodlight_Variable_Name", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Account_Id", "type":"INTEGER", "mode":"NULLABLE" }
-]
+Custom_Floodlight_Variable_Schema = [{
+    'name': 'Advertiser_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Floodlight_Config_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Floodlight_Variable_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Floodlight_Variable_Name',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Account_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}]

@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google Inc.
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -15,20 +15,18 @@
 #  limitations under the License.
 #
 ###########################################################################
-
-'''
---------------------------------------------------------------
+"""--------------------------------------------------------------
 
 Before running this Airflow module...
 
-  Install StarThinker in cloud composer from open source: 
+  Install StarThinker in cloud composer from open source:
 
     pip install git+https://github.com/google/starthinker
 
   Or push local code to the cloud composer plugins directory:
 
     source install/deploy.sh
-    4) Composer Menu	   
+    4) Composer Menu
     l) Install All
 
 --------------------------------------------------------------
@@ -38,84 +36,83 @@ Query To Table
 Save query results into a BigQuery table.
 
 Specify a single query and choose legacy or standard mode.
-For PLX use: SELECT * FROM [plx.google:FULL_TABLE_NAME.all] WHERE...
+For PLX use user authentication and: SELECT * FROM
+[plx.google:FULL_TABLE_NAME.all] WHERE...
 Every time the query runs it will overwrite the table.
 
-'''
+"""
 
 from starthinker_airflow.factory import DAG_Factory
- 
+
 # Add the following credentials to your Airflow configuration.
-USER_CONN_ID = "starthinker_user" # The connection to use for user authentication.
-GCP_CONN_ID = "starthinker_service" # The connection to use for service authentication.
+USER_CONN_ID = 'starthinker_user'  # The connection to use for user authentication.
+GCP_CONN_ID = 'starthinker_service'  # The connection to use for service authentication.
 
 INPUTS = {
-  'auth_write': 'service',  # Credentials used for writing data.
-  'query': '',  # SQL with newlines and all.
-  'dataset': '',  # Existing BigQuery dataset.
-  'table': '',  # Table to create from this query.
-  'legacy': True,  # Query type must match source tables.
+    'query': '',  # SQL with newlines and all.
+    'auth_write': 'service',  # Credentials used for writing data.
+    'dataset': '',  # Existing BigQuery dataset.
+    'table': '',  # Table to create from this query.
+    'legacy': True,  # Query type must match source tables.
 }
 
-TASKS = [
-  {
+TASKS = [{
     'bigquery': {
-      'auth': {
-        'field': {
-          'name': 'auth_write',
-          'kind': 'authentication',
-          'order': 1,
-          'default': 'service',
-          'description': 'Credentials used for writing data.'
-        }
-      },
-      'from': {
-        'query': {
-          'field': {
-            'name': 'query',
-            'kind': 'text',
-            'order': 1,
-            'default': '',
-            'description': 'SQL with newlines and all.'
-          }
+        'auth': {
+            'field': {
+                'description': 'Credentials used for writing data.',
+                'name': 'auth_write',
+                'default': 'service',
+                'kind': 'authentication',
+                'order': 1
+            }
         },
-        'legacy': {
-          'field': {
-            'name': 'legacy',
-            'kind': 'boolean',
-            'order': 4,
-            'default': True,
-            'description': 'Query type must match source tables.'
-          }
-        }
-      },
-      'to': {
-        'dataset': {
-          'field': {
-            'name': 'dataset',
-            'kind': 'string',
-            'order': 2,
-            'default': '',
-            'description': 'Existing BigQuery dataset.'
-          }
+        'to': {
+            'dataset': {
+                'field': {
+                    'description': 'Existing BigQuery dataset.',
+                    'name': 'dataset',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 2
+                }
+            },
+            'table': {
+                'field': {
+                    'description': 'Table to create from this query.',
+                    'name': 'table',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 3
+                }
+            }
         },
-        'table': {
-          'field': {
-            'name': 'table',
-            'kind': 'string',
-            'order': 3,
-            'default': '',
-            'description': 'Table to create from this query.'
-          }
+        'from': {
+            'query': {
+                'field': {
+                    'description': 'SQL with newlines and all.',
+                    'name': 'query',
+                    'default': '',
+                    'kind': 'text',
+                    'order': 1
+                }
+            },
+            'legacy': {
+                'field': {
+                    'description': 'Query type must match source tables.',
+                    'name': 'legacy',
+                    'default': True,
+                    'kind': 'boolean',
+                    'order': 4
+                }
+            }
         }
-      }
     }
-  }
-]
+}]
 
-DAG_FACTORY = DAG_Factory('bigquery_query', { 'tasks':TASKS }, INPUTS)
+DAG_FACTORY = DAG_Factory('bigquery_query', {'tasks': TASKS}, INPUTS)
 DAG_FACTORY.apply_credentails(USER_CONN_ID, GCP_CONN_ID)
 DAG = DAG_FACTORY.execute()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   DAG_FACTORY.print_commandline()

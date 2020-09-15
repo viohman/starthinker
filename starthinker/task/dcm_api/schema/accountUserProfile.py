@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,151 +17,133 @@
 ###########################################################################
 
 accountUserProfile_Schema = [
-  {
-    "description": "",
-    "name": "accountId",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "active",
-    "type": "BOOLEAN",
-    "mode": "NULLABLE"
-  },
-  [
     {
-      "description": "",
-      "name": "kind",
-      "type": "STRING",
-      "mode": "NULLABLE"
+        'description': '',
+        'name': 'accountId',
+        'type': 'INT64',
+        'mode': 'NULLABLE'
+    }, {
+        'name': 'active',
+        'type': 'BOOLEAN',
+        'mode': 'NULLABLE'
     },
-    {
-      "name": "objectIds",
-      "type": "INT64",
-      "mode": "REPEATED"
+    [{
+        'description': '',
+        'name': 'kind',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'name': 'objectIds',
+        'type': 'INT64',
+        'mode': 'REPEATED'
+    }, {
+        'description': 'ALL, ASSIGNED, NONE',
+        'name': 'status',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }],
+    [{
+        'description': '',
+        'name': 'kind',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'name': 'objectIds',
+        'type': 'INT64',
+        'mode': 'REPEATED'
+    }, {
+        'description': 'ALL, ASSIGNED, NONE',
+        'name': 'status',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }], {
+        'description': '',
+        'name': 'comments',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'email',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'id',
+        'type': 'INT64',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'kind',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'locale',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'name',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
     },
-    {
-      "description": "ALL, ASSIGNED, NONE",
-      "name": "status",
-      "type": "STRING",
-      "mode": "NULLABLE"
+    [{
+        'description': '',
+        'name': 'kind',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'name': 'objectIds',
+        'type': 'INT64',
+        'mode': 'REPEATED'
+    }, {
+        'description': 'ALL, ASSIGNED, NONE',
+        'name': 'status',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }], {
+        'description': '',
+        'name': 'subaccountId',
+        'type': 'INT64',
+        'mode': 'NULLABLE'
+    }, {
+        'description':
+            'EXTERNAL_TRAFFICKER, INTERNAL_NON_TRAFFICKER, INTERNAL_TRAFFICKER',
+        'name':
+            'traffickerType',
+        'type':
+            'STRING',
+        'mode':
+            'NULLABLE'
+    }, {
+        'description':
+            'INTERNAL_ADMINISTRATOR, NORMAL_USER, READ_ONLY_SUPER_USER, '
+            'SUPER_USER',
+        'name':
+            'userAccessType',
+        'type':
+            'STRING',
+        'mode':
+            'NULLABLE'
+    },
+    [{
+        'description': '',
+        'name': 'kind',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'name': 'objectIds',
+        'type': 'INT64',
+        'mode': 'REPEATED'
+    }, {
+        'description': 'ALL, ASSIGNED, NONE',
+        'name': 'status',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }], {
+        'description': '',
+        'name': 'userRoleId',
+        'type': 'INT64',
+        'mode': 'NULLABLE'
     }
-  ],
-  [
-    {
-      "description": "",
-      "name": "kind",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "objectIds",
-      "type": "INT64",
-      "mode": "REPEATED"
-    },
-    {
-      "description": "ALL, ASSIGNED, NONE",
-      "name": "status",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    }
-  ],
-  {
-    "description": "",
-    "name": "comments",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "email",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "id",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "kind",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "locale",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "name",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  [
-    {
-      "description": "",
-      "name": "kind",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "objectIds",
-      "type": "INT64",
-      "mode": "REPEATED"
-    },
-    {
-      "description": "ALL, ASSIGNED, NONE",
-      "name": "status",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    }
-  ],
-  {
-    "description": "",
-    "name": "subaccountId",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "EXTERNAL_TRAFFICKER, INTERNAL_NON_TRAFFICKER, INTERNAL_TRAFFICKER",
-    "name": "traffickerType",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "INTERNAL_ADMINISTRATOR, NORMAL_USER, READ_ONLY_SUPER_USER, SUPER_USER",
-    "name": "userAccessType",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  [
-    {
-      "description": "",
-      "name": "kind",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "objectIds",
-      "type": "INT64",
-      "mode": "REPEATED"
-    },
-    {
-      "description": "ALL, ASSIGNED, NONE",
-      "name": "status",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    }
-  ],
-  {
-    "description": "",
-    "name": "userRoleId",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  }
 ]

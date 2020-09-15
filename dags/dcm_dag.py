@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google Inc.
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -15,20 +15,18 @@
 #  limitations under the License.
 #
 ###########################################################################
-
-'''
---------------------------------------------------------------
+"""--------------------------------------------------------------
 
 Before running this Airflow module...
 
-  Install StarThinker in cloud composer from open source: 
+  Install StarThinker in cloud composer from open source:
 
     pip install git+https://github.com/google/starthinker
 
   Or push local code to the cloud composer plugins directory:
 
     source install/deploy.sh
-    4) Composer Menu	   
+    4) Composer Menu
     l) Install All
 
 --------------------------------------------------------------
@@ -41,66 +39,64 @@ Add a an account as [account_id]@[profile_id]
 Fetch the report JSON definition. Arguably could be better.
 The account is automatically added to the report definition.
 
-'''
+"""
 
 from starthinker_airflow.factory import DAG_Factory
- 
+
 # Add the following credentials to your Airflow configuration.
-USER_CONN_ID = "starthinker_user" # The connection to use for user authentication.
-GCP_CONN_ID = "starthinker_service" # The connection to use for service authentication.
+USER_CONN_ID = 'starthinker_user'  # The connection to use for user authentication.
+GCP_CONN_ID = 'starthinker_service'  # The connection to use for service authentication.
 
 INPUTS = {
-  'auth_read': 'user',  # Credentials used for reading data.
-  'account': '',
-  'body': '{}',
-  'delete': False,
+    'auth_read': 'user',  # Credentials used for reading data.
+    'account': '',
+    'body': '{}',
+    'delete': False,
 }
 
-TASKS = [
-  {
+TASKS = [{
     'dcm': {
-      'auth': {
-        'field': {
-          'name': 'auth_read',
-          'kind': 'authentication',
-          'order': 1,
-          'default': 'user',
-          'description': 'Credentials used for reading data.'
-        }
-      },
-      'report': {
-        'account': {
-          'field': {
-            'name': 'account',
-            'kind': 'string',
-            'order': 1,
-            'default': ''
-          }
+        'auth': {
+            'field': {
+                'description': 'Credentials used for reading data.',
+                'name': 'auth_read',
+                'default': 'user',
+                'kind': 'authentication',
+                'order': 1
+            }
         },
-        'body': {
-          'field': {
-            'name': 'body',
-            'kind': 'json',
-            'order': 2,
-            'default': '{}'
-          }
+        'delete': {
+            'field': {
+                'name': 'delete',
+                'default': False,
+                'kind': 'boolean',
+                'order': 3
+            }
+        },
+        'report': {
+            'body': {
+                'field': {
+                    'name': 'body',
+                    'default': '{}',
+                    'kind': 'json',
+                    'order': 2
+                }
+            },
+            'account': {
+                'field': {
+                    'name': 'account',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 1
+                }
+            }
         }
-      },
-      'delete': {
-        'field': {
-          'name': 'delete',
-          'kind': 'boolean',
-          'order': 3,
-          'default': False
-        }
-      }
     }
-  }
-]
+}]
 
-DAG_FACTORY = DAG_Factory('dcm', { 'tasks':TASKS }, INPUTS)
+DAG_FACTORY = DAG_Factory('dcm', {'tasks': TASKS}, INPUTS)
 DAG_FACTORY.apply_credentails(USER_CONN_ID, GCP_CONN_ID)
 DAG = DAG_FACTORY.execute()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   DAG_FACTORY.print_commandline()

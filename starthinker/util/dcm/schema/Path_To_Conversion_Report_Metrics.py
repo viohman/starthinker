@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,7 +16,12 @@
 #
 ###########################################################################
 
-Path_To_Conversion_Report_Metrics_Schema = [
-  { "name":"Total_Conversions", "type":"FLOAT", "mode":"NULLABLE" },
-  { "name":"Total_Revenue", "type":"FLOAT", "mode":"NULLABLE" }
-]
+Path_To_Conversion_Report_Metrics_Schema = [{
+    'name': 'Total_Conversions',
+    'type': 'FLOAT',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Total_Revenue',
+    'type': 'FLOAT',
+    'mode': 'NULLABLE'
+}]

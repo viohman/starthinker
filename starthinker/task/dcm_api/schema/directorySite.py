@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,127 +17,104 @@
 ###########################################################################
 
 directorySite_Schema = [
-  {
-    "name": "active",
-    "type": "BOOLEAN",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "id",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  [
     {
-      "description": "",
-      "name": "dimensionName",
-      "type": "STRING",
-      "mode": "NULLABLE"
+        'name': 'active',
+        'type': 'BOOLEAN',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'id',
+        'type': 'INT64',
+        'mode': 'NULLABLE'
     },
-    {
-      "description": "",
-      "name": "etag",
-      "type": "STRING",
-      "mode": "NULLABLE"
+    [{
+        'description': '',
+        'name': 'dimensionName',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'etag',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'id',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'kind',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': 'BEGINS_WITH, CONTAINS, EXACT, WILDCARD_EXPRESSION',
+        'name': 'matchType',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'value',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }], {
+        'name': 'inpageTagFormats',
+        'type': 'STRING',
+        'mode': 'REPEATED'
+    }, {
+        'name': 'interstitialTagFormats',
+        'type': 'STRING',
+        'mode': 'REPEATED'
+    }, {
+        'description': '',
+        'name': 'kind',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'name',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
     },
-    {
-      "description": "",
-      "name": "id",
-      "type": "STRING",
-      "mode": "NULLABLE"
+    [{
+        'name': 'activeViewOptOut',
+        'type': 'BOOLEAN',
+        'mode': 'NULLABLE'
     },
-    {
-      "description": "",
-      "name": "kind",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "description": "BEGINS_WITH, CONTAINS, EXACT, WILDCARD_EXPRESSION",
-      "name": "matchType",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    },
-    {
-      "description": "",
-      "name": "value",
-      "type": "STRING",
-      "mode": "NULLABLE"
-    }
-  ],
-  {
-    "name": "inpageTagFormats",
-    "type": "STRING",
-    "mode": "REPEATED"
-  },
-  {
-    "name": "interstitialTagFormats",
-    "type": "STRING",
-    "mode": "REPEATED"
-  },
-  {
-    "description": "",
-    "name": "kind",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "name",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  [
-    {
-      "name": "activeViewOptOut",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    [
-      {
-        "description": "",
-        "name": "dfpNetworkCode",
-        "type": "STRING",
-        "mode": "NULLABLE"
-      },
-      {
-        "description": "",
-        "name": "dfpNetworkName",
-        "type": "STRING",
-        "mode": "NULLABLE"
-      },
-      {
-        "name": "programmaticPlacementAccepted",
-        "type": "BOOLEAN",
-        "mode": "NULLABLE"
-      },
-      {
-        "name": "pubPaidPlacementAccepted",
-        "type": "BOOLEAN",
-        "mode": "NULLABLE"
-      },
-      {
-        "name": "publisherPortalOnly",
-        "type": "BOOLEAN",
-        "mode": "NULLABLE"
-      }
-    ],
-    {
-      "name": "instreamVideoPlacementAccepted",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    },
-    {
-      "name": "interstitialPlacementAccepted",
-      "type": "BOOLEAN",
-      "mode": "NULLABLE"
-    }
-  ],
-  {
-    "description": "",
-    "name": "url",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  }
+     [{
+         'description': '',
+         'name': 'dfpNetworkCode',
+         'type': 'STRING',
+         'mode': 'NULLABLE'
+     }, {
+         'description': '',
+         'name': 'dfpNetworkName',
+         'type': 'STRING',
+         'mode': 'NULLABLE'
+     }, {
+         'name': 'programmaticPlacementAccepted',
+         'type': 'BOOLEAN',
+         'mode': 'NULLABLE'
+     }, {
+         'name': 'pubPaidPlacementAccepted',
+         'type': 'BOOLEAN',
+         'mode': 'NULLABLE'
+     }, {
+         'name': 'publisherPortalOnly',
+         'type': 'BOOLEAN',
+         'mode': 'NULLABLE'
+     }], {
+         'name': 'instreamVideoPlacementAccepted',
+         'type': 'BOOLEAN',
+         'mode': 'NULLABLE'
+     }, {
+         'name': 'interstitialPlacementAccepted',
+         'type': 'BOOLEAN',
+         'mode': 'NULLABLE'
+     }], {
+         'description': '',
+         'name': 'url',
+         'type': 'STRING',
+         'mode': 'NULLABLE'
+     }
 ]

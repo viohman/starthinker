@@ -1,7 +1,7 @@
-{ 
+{
   "setup":{
     "license":"Apache License, Version 2.0",
-    "copyright":"Copyright 2019 Google Inc."
+    "copyright":"Copyright 2020 Google LLC"
   },
   "tasks":[
     { "email":{
@@ -34,6 +34,7 @@
         "subject":"Testing Email Attachment",
         "attachment":"test_data.csv",
         "out":{
+          "auth": "service",
           "bigquery":{
             "dataset":"Test",
             "table":"Email_Attachment",
@@ -47,7 +48,7 @@
       }
     }},
     { "test": {
-      "auth":"user",
+      "auth":"service",
       "bigquery":{
         "dataset":"Test",
         "table":"Email_Attachment",

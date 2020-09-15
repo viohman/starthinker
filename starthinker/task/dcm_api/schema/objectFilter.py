@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,22 +16,18 @@
 #
 ###########################################################################
 
-objectFilter_Schema = [
-  {
-    "description": "",
-    "name": "kind",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "objectIds",
-    "type": "INT64",
-    "mode": "REPEATED"
-  },
-  {
-    "description": "ALL, ASSIGNED, NONE",
-    "name": "status",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  }
-]
+objectFilter_Schema = [{
+    'description': '',
+    'name': 'kind',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'objectIds',
+    'type': 'INT64',
+    'mode': 'REPEATED'
+}, {
+    'description': 'ALL, ASSIGNED, NONE',
+    'name': 'status',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}]

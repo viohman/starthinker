@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,17 +16,14 @@
 #
 ###########################################################################
 
-universalAdId_Schema = [
-  {
-    "description": "AD_ID.ORG, CLEARCAST, DCM, OTHER",
-    "name": "registry",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "value",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  }
-]
+universalAdId_Schema = [{
+    'description': 'AD_ID.ORG, CLEARCAST, DCM, OTHER',
+    'name': 'registry',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'value',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}]

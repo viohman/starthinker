@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,23 +16,19 @@
 #
 ###########################################################################
 
-sortedDimension_Schema = [
-  {
-    "description": "",
-    "name": "kind",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "name",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "ASCENDING, DESCENDING",
-    "name": "sortOrder",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  }
-]
+sortedDimension_Schema = [{
+    'description': '',
+    'name': 'kind',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'name',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': 'ASCENDING, DESCENDING',
+    'name': 'sortOrder',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}]

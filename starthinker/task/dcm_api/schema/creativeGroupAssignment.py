@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,17 +16,14 @@
 #
 ###########################################################################
 
-creativeGroupAssignment_Schema = [
-  {
-    "description": "",
-    "name": "creativeGroupId",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "CREATIVE_GROUP_ONE, CREATIVE_GROUP_TWO",
-    "name": "creativeGroupNumber",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  }
-]
+creativeGroupAssignment_Schema = [{
+    'description': '',
+    'name': 'creativeGroupId',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'description': 'CREATIVE_GROUP_ONE, CREATIVE_GROUP_TWO',
+    'name': 'creativeGroupNumber',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}]

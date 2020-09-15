@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 #
 ###########################################################################
 
-Custom_Rich_Media_Filters_Schema = [
-  { "name":"Rich_Media_Event", "type":"STRING", "mode":"NULLABLE" }
-]
+Custom_Rich_Media_Filters_Schema = [{
+    'name': 'Rich_Media_Event',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}]

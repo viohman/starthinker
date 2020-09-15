@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,12 +16,32 @@
 #
 ###########################################################################
 
-Custom_Rich_Media_Schema = [
-  { "name":"Advertiser_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Rich_Media_Event_Name", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Rich_Media_Event_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Rich_Media_Event_Type_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Rich_Media_Event_Type", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Floodlight_Config_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Account_Id", "type":"INTEGER", "mode":"NULLABLE" }
-]
+Custom_Rich_Media_Schema = [{
+    'name': 'Advertiser_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Rich_Media_Event_Name',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Rich_Media_Event_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Rich_Media_Event_Type_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Rich_Media_Event_Type',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Floodlight_Config_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Account_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}]

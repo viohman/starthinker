@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google Inc.
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -22,21 +22,20 @@ from django.conf import settings
 from starthinker_ui.recipe.scripts import Script
 from starthinker_ui.recipe.dag import script_to_dag
 
+
 class Command(BaseCommand):
   help = 'Generate Templates For Airflow'
 
   def handle(self, *args, **kwargs):
-     
+
     for script in Script.get_scripts():
       if script.get_open_source():
 
         print('Writing: %s_dag.py' % script.get_tag())
 
-        with open('%s/dags/%s_dag.py' % (settings.UI_ROOT, script.get_tag()), 'w') as dag_file:
-          dag_file.write(script_to_dag(
-            script.get_tag(),
-            script.get_name(),
-            script.get_description(),
-            script.get_instructions(),
-            script.get_tasks()
-          ))
+        with open('%s/dags/%s_dag.py' % (settings.UI_ROOT, script.get_tag()),
+                  'w') as dag_file:
+          dag_file.write(
+              script_to_dag(script.get_tag(), script.get_name(),
+                            script.get_description(), script.get_instructions(),
+                            script.get_tasks()))

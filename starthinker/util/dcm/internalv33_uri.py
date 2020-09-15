@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google Inc.
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 
 # https://cs.corp.google.com/piper///depot/google3/apiserving/discoverydata/dfareporting/dfareporting.internalv3_3.rest.json?g=0
 
-URI = '''{
+URI = """{
  "kind": "discovery#restDescription",
  "etag": "\\"J3WqvAcMk4eQjJXvfSI4Yr8VouA/dlVhm7l_mXhYjrVFBxpy1FrGfcE\\"",
  "discoveryVersion": "v1",
@@ -21263,4 +21263,4 @@ URI = '''{
   }
  }
 }
-'''
+"""

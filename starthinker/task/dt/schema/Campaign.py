@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,13 +16,36 @@
 #
 ###########################################################################
 
-Campaign_Schema = [
-  { "name":"Advertiser_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Billing_Invoice_Code", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Campaign", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Campaign_End_Date", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Campaign_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Campaign_Start_Date", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Floodlight_Config_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Account_Id", "type":"INTEGER", "mode":"NULLABLE" }
-]
+Campaign_Schema = [{
+    'name': 'Advertiser_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Billing_Invoice_Code',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Campaign',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Campaign_End_Date',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Campaign_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Campaign_Start_Date',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Floodlight_Config_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Account_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}]

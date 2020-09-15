@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,28 +16,23 @@
 #
 ###########################################################################
 
-customViewabilityMetricConfiguration_Schema = [
-  {
-    "name": "audible",
-    "type": "BOOLEAN",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "timeMillis",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "timePercent",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "viewabilityPercent",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  }
-]
+customViewabilityMetricConfiguration_Schema = [{
+    'name': 'audible',
+    'type': 'BOOLEAN',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'timeMillis',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'timePercent',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'viewabilityPercent',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}]

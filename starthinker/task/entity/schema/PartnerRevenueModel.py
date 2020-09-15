@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,20 +17,24 @@
 ###########################################################################
 
 PartnerRevenueModel_Schema = [
-  { "name":"type",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"amount_advertiser_micros",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"media_cost_markup_percent_millis",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"post_view_conversion_tracking_fraction",
-    "type":"FLOAT",
-    "mode":"NULLABLE",
-  },
+    {
+        'name': 'type',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'amount_advertiser_micros',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'media_cost_markup_percent_millis',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'post_view_conversion_tracking_fraction',
+        'type': 'FLOAT',
+        'mode': 'NULLABLE',
+    },
 ]

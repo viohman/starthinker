@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,11 +16,28 @@
 #
 ###########################################################################
 
-Cross_Dimension_Reach_Report_Overlap_Metrics_Schema = [
-  { "name":"Cookie_Reach_Overlap_Click_Reach", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Cookie_Reach_Overlap_Click_Reach_Percent", "type":"FLOAT", "mode":"NULLABLE" },
-  { "name":"Cookie_Reach_Overlap_Impression_Reach", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Cookie_Reach_Overlap_Impression_Reach_Percent", "type":"FLOAT", "mode":"NULLABLE" },
-  { "name":"Cookie_Reach_Overlap_Total_Reach", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Cookie_Reach_Overlap_Total_Reach_Percent", "type":"FLOAT", "mode":"NULLABLE" }
-]
+Cross_Dimension_Reach_Report_Overlap_Metrics_Schema = [{
+    'name': 'Cookie_Reach_Overlap_Click_Reach',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Cookie_Reach_Overlap_Click_Reach_Percent',
+    'type': 'FLOAT',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Cookie_Reach_Overlap_Impression_Reach',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Cookie_Reach_Overlap_Impression_Reach_Percent',
+    'type': 'FLOAT',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Cookie_Reach_Overlap_Total_Reach',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Cookie_Reach_Overlap_Total_Reach_Percent',
+    'type': 'FLOAT',
+    'mode': 'NULLABLE'
+}]

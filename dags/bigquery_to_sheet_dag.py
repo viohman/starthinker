@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google Inc.
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -15,20 +15,18 @@
 #  limitations under the License.
 #
 ###########################################################################
-
-'''
---------------------------------------------------------------
+"""--------------------------------------------------------------
 
 Before running this Airflow module...
 
-  Install StarThinker in cloud composer from open source: 
+  Install StarThinker in cloud composer from open source:
 
     pip install git+https://github.com/google/starthinker
 
   Or push local code to the cloud composer plugins directory:
 
     source install/deploy.sh
-    4) Composer Menu	   
+    4) Composer Menu
     l) Install All
 
 --------------------------------------------------------------
@@ -42,102 +40,107 @@ Leave range blank or set to A2 to insert one line down.
 The range is cleared before the sheet is written to.
 To select a table use SELECT * FROM table.
 
-'''
+"""
 
 from starthinker_airflow.factory import DAG_Factory
- 
+
 # Add the following credentials to your Airflow configuration.
-USER_CONN_ID = "starthinker_user" # The connection to use for user authentication.
-GCP_CONN_ID = "starthinker_service" # The connection to use for service authentication.
+USER_CONN_ID = 'starthinker_user'  # The connection to use for user authentication.
+GCP_CONN_ID = 'starthinker_service'  # The connection to use for service authentication.
 
 INPUTS = {
-  'auth_read': 'user',  # Credentials used for reading data.
-  'sheet': '',  # Either sheet url or sheet name.
-  'tab': '',  # Name of the tab where to put the data.
-  'range': '',  # Range in the sheet to place the data, leave blank for whole sheet.
-  'dataset': '',  # Existing BigQuery dataset.
-  'query': '',  # Query to pull data from the table.
-  'legacy': True,  # Use Legacy SQL
+    'auth_read': 'user',  # Credentials used for reading data.
+    'sheet': '',  # Either sheet url or sheet name.
+    'tab': '',  # Name of the tab where to put the data.
+    'range':
+        '',  # Range in the sheet to place the data, leave blank for whole sheet.
+    'dataset': '',  # Existing BigQuery dataset.
+    'query': '',  # Query to pull data from the table.
+    'legacy': True,  # Use Legacy SQL
 }
 
-TASKS = [
-  {
+TASKS = [{
     'bigquery': {
-      'auth': {
-        'field': {
-          'name': 'auth_read',
-          'kind': 'authentication',
-          'order': 1,
-          'default': 'user',
-          'description': 'Credentials used for reading data.'
+        'auth': {
+            'field': {
+                'description': 'Credentials used for reading data.',
+                'name': 'auth_read',
+                'default': 'user',
+                'kind': 'authentication',
+                'order': 1
+            }
+        },
+        'to': {
+            'tab': {
+                'field': {
+                    'description': 'Name of the tab where to put the data.',
+                    'name': 'tab',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 2
+                }
+            },
+            'sheet': {
+                'field': {
+                    'description': 'Either sheet url or sheet name.',
+                    'name': 'sheet',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 1
+                }
+            },
+            'range': {
+                'field': {
+                    'description':
+                        'Range in the sheet to place the data, leave blank for'
+                        ' whole sheet.',
+                    'name':
+                        'range',
+                    'default':
+                        '',
+                    'kind':
+                        'string',
+                    'order':
+                        3
+                }
+            }
+        },
+        'from': {
+            'auth': 'service',
+            'query': {
+                'field': {
+                    'description': 'Query to pull data from the table.',
+                    'name': 'query',
+                    'default': '',
+                    'kind': 'text',
+                    'order': 5
+                }
+            },
+            'legacy': {
+                'field': {
+                    'description': 'Use Legacy SQL',
+                    'name': 'legacy',
+                    'default': True,
+                    'kind': 'boolean',
+                    'order': 6
+                }
+            },
+            'dataset': {
+                'field': {
+                    'description': 'Existing BigQuery dataset.',
+                    'name': 'dataset',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 4
+                }
+            }
         }
-      },
-      'from': {
-        'auth': 'service',
-        'dataset': {
-          'field': {
-            'name': 'dataset',
-            'kind': 'string',
-            'order': 4,
-            'default': '',
-            'description': 'Existing BigQuery dataset.'
-          }
-        },
-        'query': {
-          'field': {
-            'name': 'query',
-            'kind': 'text',
-            'order': 5,
-            'default': '',
-            'description': 'Query to pull data from the table.'
-          }
-        },
-        'legacy': {
-          'field': {
-            'name': 'legacy',
-            'kind': 'boolean',
-            'order': 6,
-            'default': True,
-            'description': 'Use Legacy SQL'
-          }
-        }
-      },
-      'to': {
-        'sheet': {
-          'field': {
-            'name': 'sheet',
-            'kind': 'string',
-            'order': 1,
-            'default': '',
-            'description': 'Either sheet url or sheet name.'
-          }
-        },
-        'tab': {
-          'field': {
-            'name': 'tab',
-            'kind': 'string',
-            'order': 2,
-            'default': '',
-            'description': 'Name of the tab where to put the data.'
-          }
-        },
-        'range': {
-          'field': {
-            'name': 'range',
-            'kind': 'string',
-            'order': 3,
-            'default': '',
-            'description': 'Range in the sheet to place the data, leave blank for whole sheet.'
-          }
-        }
-      }
     }
-  }
-]
+}]
 
-DAG_FACTORY = DAG_Factory('bigquery_to_sheet', { 'tasks':TASKS }, INPUTS)
+DAG_FACTORY = DAG_Factory('bigquery_to_sheet', {'tasks': TASKS}, INPUTS)
 DAG_FACTORY.apply_credentails(USER_CONN_ID, GCP_CONN_ID)
 DAG = DAG_FACTORY.execute()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   DAG_FACTORY.print_commandline()

@@ -1,5 +1,5 @@
 ###########################################################################
-# 
+#
 #  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,25 +21,30 @@ from django.template.loader import render_to_string
 
 from starthinker_ui.recipe.scripts import Script
 
+
 def help(request):
   # if open source then request will be null
-  if request: 
-    return render(request, "website/help.html", {})
+  if request:
+    return render(request, 'website/help.html', {})
   else:
-    return render_to_string("website/help.html", { 'external':True })
+    return render_to_string('website/help.html', {'external': True})
+
 
 def solutions(request):
   # if open source then request will be null
-  if request: 
-    return render(request, "website/solutions.html", {})
+  if request:
+    return render(request, 'website/solutions.html', {})
   else:
-    return render_to_string("website/solutions.html", { 'external':True })
+    return render_to_string('website/solutions.html', {'external': True})
 
 
 def solution(request, tag):
   script = Script(tag)
   # if open source then request will be null
-  if request: 
-    return render(request, "website/solution.html", { 'script':script })
-  else: 
-    return render_to_string('website/solution.html', { 'script':script, "external":True })
+  if request:
+    return render(request, 'website/solution.html', {'script': script})
+  else:
+    return render_to_string('website/solution.html', {
+        'script': script,
+        'external': True
+    })

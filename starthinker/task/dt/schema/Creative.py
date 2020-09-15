@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,17 +16,52 @@
 #
 ###########################################################################
 
-Creative_Schema = [
-  { "name":"Advertiser_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Creative", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Creative_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Creative_Image_Url", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Creative_Last_Modified_Date", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Creative_Size", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Creative_Version", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Rendering_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Creative_Type", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Creative_Type_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Floodlight_Config_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Account_Id", "type":"INTEGER", "mode":"NULLABLE" }
-]
+Creative_Schema = [{
+    'name': 'Advertiser_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Creative',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Creative_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Creative_Image_Url',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Creative_Last_Modified_Date',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Creative_Size',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Creative_Version',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Rendering_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Creative_Type',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Creative_Type_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Floodlight_Config_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Account_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}]

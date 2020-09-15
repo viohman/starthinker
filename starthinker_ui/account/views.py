@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 ###########################################################################
-# 
-#  Copyright 2019 Google LLC 
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@
 #
 ###########################################################################
 
-
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import login as django_login, logout as django_logout
@@ -31,7 +30,8 @@ from starthinker_ui.account.models import Account
 def oauth_callback(request):
 
   # get the credentials from the Google redirect
-  flow = CredentialsFlowWrapper(settings.UI_CLIENT, redirect_uri=settings.CONST_URL + '/oauth_callback/')
+  flow = CredentialsFlowWrapper(
+      settings.UI_CLIENT, redirect_uri=settings.CONST_URL + '/oauth_callback/')
   flow.code_verifier = request.session.get('code_verifier')
   flow.fetch_token(code=request.GET['code'])
 

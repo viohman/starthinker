@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,54 +16,47 @@
 #
 ###########################################################################
 
-customRichMediaEvents_Schema = [
-  {
-    "name": "filteredEventIds",
-    "type": "RECORD",
-    "mode": "REPEATED",
-    "fields": [
-      {
-        "description": "",
-        "name": "dimensionName",
-        "type": "STRING",
-        "mode": "NULLABLE"
-      },
-      {
-        "description": "",
-        "name": "etag",
-        "type": "STRING",
-        "mode": "NULLABLE"
-      },
-      {
-        "description": "",
-        "name": "id",
-        "type": "STRING",
-        "mode": "NULLABLE"
-      },
-      {
-        "description": "",
-        "name": "kind",
-        "type": "STRING",
-        "mode": "NULLABLE"
-      },
-      {
-        "description": "BEGINS_WITH, CONTAINS, EXACT, WILDCARD_EXPRESSION",
-        "name": "matchType",
-        "type": "STRING",
-        "mode": "NULLABLE"
-      },
-      {
-        "description": "",
-        "name": "value",
-        "type": "STRING",
-        "mode": "NULLABLE"
-      }
-    ]
-  },
-  {
-    "description": "",
-    "name": "kind",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  }
-]
+customRichMediaEvents_Schema = [{
+    'name':
+        'filteredEventIds',
+    'type':
+        'RECORD',
+    'mode':
+        'REPEATED',
+    'fields': [{
+        'description': '',
+        'name': 'dimensionName',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'etag',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'id',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'kind',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': 'BEGINS_WITH, CONTAINS, EXACT, WILDCARD_EXPRESSION',
+        'name': 'matchType',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }, {
+        'description': '',
+        'name': 'value',
+        'type': 'STRING',
+        'mode': 'NULLABLE'
+    }]
+}, {
+    'description': '',
+    'name': 'kind',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}]

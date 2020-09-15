@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,27 +16,27 @@
 #
 ###########################################################################
 
-tagSetting_Schema = [
-  {
-    "description": "",
-    "name": "additionalKeyValues",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "includeClickThroughUrls",
-    "type": "BOOLEAN",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "includeClickTracking",
-    "type": "BOOLEAN",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "GENERATE_SEPARATE_TAG_FOR_EACH_KEYWORD, IGNORE, PLACEHOLDER_WITH_LIST_OF_KEYWORDS",
-    "name": "keywordOption",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  }
-]
+tagSetting_Schema = [{
+    'description': '',
+    'name': 'additionalKeyValues',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'includeClickThroughUrls',
+    'type': 'BOOLEAN',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'includeClickTracking',
+    'type': 'BOOLEAN',
+    'mode': 'NULLABLE'
+}, {
+    'description':
+        'GENERATE_SEPARATE_TAG_FOR_EACH_KEYWORD, IGNORE, '
+        'PLACEHOLDER_WITH_LIST_OF_KEYWORDS',
+    'name':
+        'keywordOption',
+    'type':
+        'STRING',
+    'mode':
+        'NULLABLE'
+}]

@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,27 +16,22 @@
 #
 ###########################################################################
 
-remarketingListShare_Schema = [
-  {
-    "description": "",
-    "name": "kind",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "remarketingListId",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "sharedAccountIds",
-    "type": "INT64",
-    "mode": "REPEATED"
-  },
-  {
-    "name": "sharedAdvertiserIds",
-    "type": "INT64",
-    "mode": "REPEATED"
-  }
-]
+remarketingListShare_Schema = [{
+    'description': '',
+    'name': 'kind',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'remarketingListId',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'sharedAccountIds',
+    'type': 'INT64',
+    'mode': 'REPEATED'
+}, {
+    'name': 'sharedAdvertiserIds',
+    'type': 'INT64',
+    'mode': 'REPEATED'
+}]

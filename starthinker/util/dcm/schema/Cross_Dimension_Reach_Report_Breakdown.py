@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,8 +16,16 @@
 #
 ###########################################################################
 
-Cross_Dimension_Reach_Report_Breakdown_Schema = [
-  { "name":"Date", "type":"DATE", "mode":"NULLABLE" },
-  { "name":"Month", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Week", "type":"STRING", "mode":"NULLABLE" }
-]
+Cross_Dimension_Reach_Report_Breakdown_Schema = [{
+    'name': 'Date',
+    'type': 'DATE',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Month',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Week',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}]

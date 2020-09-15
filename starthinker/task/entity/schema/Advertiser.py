@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,82 +17,104 @@
 ###########################################################################
 
 Advertiser_Schema = [
-  { "name":"common_data",
-    "type":"RECORD",
-    "mode":"NULLABLE",
-    "fields":[
-      { "name":"id",
-        "type":"INTEGER",
-        "mode":"NULLABLE",
-      },
-      { "name":"name",
-        "type":"STRING",
-        "mode":"NULLABLE",
-      },
-      { "name":"active",
-        "type":"BOOLEAN",
-        "mode":"NULLABLE",
-      },
-      { "name":"integration_code",
-        "type":"STRING",
-        "mode":"NULLABLE",
-      },
-    ]
-  },
-  { "name":"partner_id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"currency_code",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"timezone_code",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"landing_page_url",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"available_channel_ids",
-    "type":"INTEGER",
-    "mode":"REPEATED",
-  },
-  { "name":"blacklist_channel_id",
-    "type":"INTEGER",
-    "mode":"REPEATED",
-  },
-  { "name":"dcm_configuration",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"dcm_network_id",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"dcm_network_name",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"dcm_advertiser_id",
-    "type":"INTEGER",
-    "mode":"REPEATED",
-  },
-  { "name":"dcm_advertiser_name",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"dcm_floodlight_group_name",
-    "type":"STRING",
-    "mode":"NULLABLE",
-  },
-  { "name":"dcm_syncable_site_ids",
-    "type":"INTEGER",
-    "mode":"REPEATED",
-  },
-  { "name":"enable_oba_tags",
-    "type":"BOOLEAN",
-    "mode":"NULLABLE",
-  },
+    {
+        'name':
+            'common_data',
+        'type':
+            'RECORD',
+        'mode':
+            'NULLABLE',
+        'fields': [
+            {
+                'name': 'id',
+                'type': 'INTEGER',
+                'mode': 'NULLABLE',
+            },
+            {
+                'name': 'name',
+                'type': 'STRING',
+                'mode': 'NULLABLE',
+            },
+            {
+                'name': 'active',
+                'type': 'BOOLEAN',
+                'mode': 'NULLABLE',
+            },
+            {
+                'name': 'integration_code',
+                'type': 'STRING',
+                'mode': 'NULLABLE',
+            },
+        ]
+    },
+    {
+        'name': 'partner_id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'currency_code',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'timezone_code',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'landing_page_url',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'available_channel_ids',
+        'type': 'INTEGER',
+        'mode': 'REPEATED',
+    },
+    {
+        'name': 'blacklist_channel_id',
+        'type': 'INTEGER',
+        'mode': 'REPEATED',
+    },
+    {
+        'name': 'dcm_configuration',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'dcm_network_id',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'dcm_network_name',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'dcm_advertiser_id',
+        'type': 'INTEGER',
+        'mode': 'REPEATED',
+    },
+    {
+        'name': 'dcm_advertiser_name',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'dcm_floodlight_group_name',
+        'type': 'STRING',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'dcm_syncable_site_ids',
+        'type': 'INTEGER',
+        'mode': 'REPEATED',
+    },
+    {
+        'name': 'enable_oba_tags',
+        'type': 'BOOLEAN',
+        'mode': 'NULLABLE',
+    },
 ]

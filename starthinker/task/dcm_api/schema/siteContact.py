@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,53 +16,44 @@
 #
 ###########################################################################
 
-siteContact_Schema = [
-  {
-    "description": "",
-    "name": "address",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "SALES_PERSON, TRAFFICKER",
-    "name": "contactType",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "email",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "firstName",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "id",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "lastName",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "phone",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "title",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  }
-]
+siteContact_Schema = [{
+    'description': '',
+    'name': 'address',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': 'SALES_PERSON, TRAFFICKER',
+    'name': 'contactType',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'email',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'firstName',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'id',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'lastName',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'phone',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'title',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}]

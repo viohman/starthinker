@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,23 +16,19 @@
 #
 ###########################################################################
 
-audienceSegment_Schema = [
-  {
-    "description": "",
-    "name": "allocation",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "id",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "name",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  }
-]
+audienceSegment_Schema = [{
+    'description': '',
+    'name': 'allocation',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'id',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'name',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}]

@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google Inc.
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ from airflow import utils as airflow_utils
 
 
 class Hello(models.BaseOperator):
+
   @airflow_utils.apply_defaults
   def __init__(self, say='', sleep=0, **kwargs):
     self.say = say

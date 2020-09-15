@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google Inc.
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -15,20 +15,18 @@
 #  limitations under the License.
 #
 ###########################################################################
-
-'''
---------------------------------------------------------------
+"""--------------------------------------------------------------
 
 Before running this Airflow module...
 
-  Install StarThinker in cloud composer from open source: 
+  Install StarThinker in cloud composer from open source:
 
     pip install git+https://github.com/google/starthinker
 
   Or push local code to the cloud composer plugins directory:
 
     source install/deploy.sh
-    4) Composer Menu	   
+    4) Composer Menu
     l) Install All
 
 --------------------------------------------------------------
@@ -41,75 +39,73 @@ Provide the full edit URL for both sheets.
 Provide the tab name for both sheets.
 The tab will only be copied if it does not already exist.
 
-'''
+"""
 
 from starthinker_airflow.factory import DAG_Factory
- 
+
 # Add the following credentials to your Airflow configuration.
-USER_CONN_ID = "starthinker_user" # The connection to use for user authentication.
-GCP_CONN_ID = "starthinker_service" # The connection to use for service authentication.
+USER_CONN_ID = 'starthinker_user'  # The connection to use for user authentication.
+GCP_CONN_ID = 'starthinker_service'  # The connection to use for service authentication.
 
 INPUTS = {
-  'auth_read': 'user',  # Credentials used for reading data.
-  'from_sheet': '',
-  'from_tab': '',
-  'to_sheet': '',
-  'to_tab': '',
+    'auth_read': 'user',  # Credentials used for reading data.
+    'from_sheet': '',
+    'from_tab': '',
+    'to_sheet': '',
+    'to_tab': '',
 }
 
-TASKS = [
-  {
+TASKS = [{
     'sheets': {
-      'auth': {
-        'field': {
-          'name': 'auth_read',
-          'kind': 'authentication',
-          'order': 1,
-          'default': 'user',
-          'description': 'Credentials used for reading data.'
-        }
-      },
-      'template': {
-        'sheet': {
-          'field': {
-            'name': 'from_sheet',
-            'kind': 'string',
-            'order': 1,
-            'default': ''
-          }
+        'auth': {
+            'field': {
+                'description': 'Credentials used for reading data.',
+                'name': 'auth_read',
+                'default': 'user',
+                'kind': 'authentication',
+                'order': 1
+            }
         },
         'tab': {
-          'field': {
-            'name': 'from_tab',
-            'kind': 'string',
-            'order': 2,
-            'default': ''
-          }
+            'field': {
+                'name': 'to_tab',
+                'default': '',
+                'kind': 'string',
+                'order': 4
+            }
+        },
+        'template': {
+            'tab': {
+                'field': {
+                    'name': 'from_tab',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 2
+                }
+            },
+            'sheet': {
+                'field': {
+                    'name': 'from_sheet',
+                    'default': '',
+                    'kind': 'string',
+                    'order': 1
+                }
+            }
+        },
+        'sheet': {
+            'field': {
+                'name': 'to_sheet',
+                'default': '',
+                'kind': 'string',
+                'order': 3
+            }
         }
-      },
-      'sheet': {
-        'field': {
-          'name': 'to_sheet',
-          'kind': 'string',
-          'order': 3,
-          'default': ''
-        }
-      },
-      'tab': {
-        'field': {
-          'name': 'to_tab',
-          'kind': 'string',
-          'order': 4,
-          'default': ''
-        }
-      }
     }
-  }
-]
+}]
 
-DAG_FACTORY = DAG_Factory('sheets_copy', { 'tasks':TASKS }, INPUTS)
+DAG_FACTORY = DAG_Factory('sheets_copy', {'tasks': TASKS}, INPUTS)
 DAG_FACTORY.apply_credentails(USER_CONN_ID, GCP_CONN_ID)
 DAG = DAG_FACTORY.execute()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   DAG_FACTORY.print_commandline()

@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2019 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,17 +16,14 @@
 #
 ###########################################################################
 
-videoOffset_Schema = [
-  {
-    "description": "",
-    "name": "offsetPercentage",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  },
-  {
-    "description": "",
-    "name": "offsetSeconds",
-    "type": "INT64",
-    "mode": "NULLABLE"
-  }
-]
+videoOffset_Schema = [{
+    'description': '',
+    'name': 'offsetPercentage',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}, {
+    'description': '',
+    'name': 'offsetSeconds',
+    'type': 'INT64',
+    'mode': 'NULLABLE'
+}]

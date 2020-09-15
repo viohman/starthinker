@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,10 +16,24 @@
 #
 ###########################################################################
 
-Site_Schema = [
-  { "name":"Site", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Site_Directory", "type":"STRING", "mode":"NULLABLE" },
-  { "name":"Site_Directory_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Site_Id", "type":"INTEGER", "mode":"NULLABLE" },
-  { "name":"Account_Id", "type":"INTEGER", "mode":"NULLABLE" }
-]
+Site_Schema = [{
+    'name': 'Site',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Site_Directory',
+    'type': 'STRING',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Site_Directory_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Site_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}, {
+    'name': 'Account_Id',
+    'type': 'INTEGER',
+    'mode': 'NULLABLE'
+}]

@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google Inc.
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -30,16 +30,16 @@ class Command(BaseCommand):
 
   def add_arguments(self, parser):
     parser.add_argument(
-      '--analytics',
-      action='store',
-      dest='analytics',
-      required=True,
-      type=str,
-      help='Google analytics tag.',
+        '--analytics',
+        action='store',
+        dest='analytics',
+        required=True,
+        type=str,
+        help='Google analytics tag.',
     )
 
   def handle(self, *args, **kwargs):
-    
+
     settings.GOOGLE_ANALYTICS = kwargs['analytics']
 
     directory = '%s/docs' % settings.UI_ROOT
@@ -61,6 +61,7 @@ class Command(BaseCommand):
       if s.get_open_source():
         directory = '%s/docs/solution/%s' % (settings.UI_ROOT, s.get_tag())
         print('Writing:', directory)
-        if not os.path.exists(directory): os.makedirs(directory)
+        if not os.path.exists(directory):
+          os.makedirs(directory)
         with open('%s/index.html' % directory, 'w') as solution_file:
           solution_file.write(solution(request=None, tag=s.get_tag()))

@@ -1,6 +1,6 @@
 ###########################################################################
-# 
-#  Copyright 2019 Google Inc.
+#
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -15,20 +15,18 @@
 #  limitations under the License.
 #
 ###########################################################################
-
-'''
---------------------------------------------------------------
+"""--------------------------------------------------------------
 
 Before running this Airflow module...
 
-  Install StarThinker in cloud composer from open source: 
+  Install StarThinker in cloud composer from open source:
 
     pip install git+https://github.com/google/starthinker
 
   Or push local code to the cloud composer plugins directory:
 
     source install/deploy.sh
-    4) Composer Menu	   
+    4) Composer Menu
     l) Install All
 
 --------------------------------------------------------------
@@ -41,59 +39,62 @@ Specify a single query and choose legacy or standard mode.
 For PLX use: SELECT * FROM [plx.google:FULL_TABLE_NAME.all] WHERE...
 For non legacy use: SELECT * `project.datset.table` WHERE...
 
-'''
+"""
 
 from starthinker_airflow.factory import DAG_Factory
- 
+
 # Add the following credentials to your Airflow configuration.
-USER_CONN_ID = "starthinker_user" # The connection to use for user authentication.
-GCP_CONN_ID = "starthinker_service" # The connection to use for service authentication.
+USER_CONN_ID = 'starthinker_user'  # The connection to use for user authentication.
+GCP_CONN_ID = 'starthinker_service'  # The connection to use for service authentication.
 
 INPUTS = {
-  'auth_write': 'service',  # Credentials used for writing data.
-  'query': '',  # SQL with newlines and all.
-  'legacy': True,  # Query type must match table and query format.
+    'query': '',  # SQL with newlines and all.
+    'auth_write': 'service',  # Credentials used for writing data.
+    'legacy': True,  # Query type must match table and query format.
 }
 
-TASKS = [
-  {
+TASKS = [{
     'bigquery': {
-      'auth': {
-        'field': {
-          'name': 'auth_write',
-          'kind': 'authentication',
-          'order': 1,
-          'default': 'service',
-          'description': 'Credentials used for writing data.'
-        }
-      },
-      'run': {
-        'query': {
-          'field': {
-            'name': 'query',
-            'kind': 'text',
-            'order': 1,
-            'default': '',
-            'description': 'SQL with newlines and all.'
-          }
+        'auth': {
+            'field': {
+                'description': 'Credentials used for writing data.',
+                'name': 'auth_write',
+                'default': 'service',
+                'kind': 'authentication',
+                'order': 1
+            }
         },
-        'legacy': {
-          'field': {
-            'name': 'legacy',
-            'kind': 'boolean',
-            'order': 2,
-            'default': True,
-            'description': 'Query type must match table and query format.'
-          }
+        'run': {
+            'query': {
+                'field': {
+                    'description': 'SQL with newlines and all.',
+                    'name': 'query',
+                    'default': '',
+                    'kind': 'text',
+                    'order': 1
+                }
+            },
+            'legacy': {
+                'field': {
+                    'description':
+                        'Query type must match table and query format.',
+                    'name':
+                        'legacy',
+                    'default':
+                        True,
+                    'kind':
+                        'boolean',
+                    'order':
+                        2
+                }
+            }
         }
-      }
     }
-  }
-]
+}]
 
-DAG_FACTORY = DAG_Factory('bigquery_run_query', { 'tasks':TASKS }, INPUTS)
+DAG_FACTORY = DAG_Factory('bigquery_run_query', {'tasks': TASKS}, INPUTS)
 DAG_FACTORY.apply_credentails(USER_CONN_ID, GCP_CONN_ID)
 DAG = DAG_FACTORY.execute()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   DAG_FACTORY.print_commandline()

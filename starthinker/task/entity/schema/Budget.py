@@ -1,6 +1,6 @@
 ###########################################################################
 #
-#  Copyright 2017 Google Inc.
+#  Copyright 2020 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,36 +17,44 @@
 ###########################################################################
 
 Budget_Schema = [
-  { "name":"start_time_usec",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"end_time_usec",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"max_impressions",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"max_spend_advertiser_micros",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"pacing_type",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"pacing_max_impressions",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"pacing_max_spend_advertiser_micros",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
-  { "name":"pacing_distribution",
-    "type":"INTEGER",
-    "mode":"NULLABLE",
-  },
+    {
+        'name': 'start_time_usec',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'end_time_usec',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'max_impressions',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'max_spend_advertiser_micros',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'pacing_type',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'pacing_max_impressions',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'pacing_max_spend_advertiser_micros',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
+    {
+        'name': 'pacing_distribution',
+        'type': 'INTEGER',
+        'mode': 'NULLABLE',
+    },
 ]
