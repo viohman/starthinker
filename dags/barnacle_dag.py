@@ -62,7 +62,7 @@ USER_CONN_ID = "starthinker_user" # The connection to use for user authenticatio
 GCP_CONN_ID = "starthinker_service" # The connection to use for service authentication.
 
 INPUTS = {
-  'dataset': '',  # Place where tables will be written in BigQuery.
+  'recipe_slug': '',  # Place where tables will be written in BigQuery.
   'auth_read': 'user',  # Credentials used for reading data.
   'recipe_project': '',  # Project where BigQuery dataset will be created.
   'auth_write': 'service',  # Credentials used for writing data.
@@ -88,9 +88,9 @@ TASKS = [
       },
       'dataset': {
         'field': {
-          'name': 'dataset',
+          'name': 'recipe_slug',
           'kind': 'string',
-          'order': 1,
+          'order': 4,
           'default': '',
           'description': 'Name of Google BigQuery dataset to create.'
         }
@@ -112,68 +112,6 @@ TASKS = [
           'description': 'Credentials used for reading data.'
         }
       },
-      'endpoints': [
-        'accounts',
-        'subaccounts',
-        'profiles',
-        'advertisers',
-        'campaigns',
-        'sites',
-        'roles'
-      ],
-      'reports': False,
-      'accounts': {
-        'single_cell': True,
-        'values': {
-          'field': {
-            'name': 'accounts',
-            'kind': 'integer_list',
-            'order': 2,
-            'default': [
-            ],
-            'description': 'Comma separated CM account ids.'
-          }
-        }
-      },
-      'out': {
-        'auth': {
-          'field': {
-            'name': 'auth_write',
-            'kind': 'authentication',
-            'order': 1,
-            'default': 'service',
-            'description': 'Credentials used for writing data.'
-          }
-        },
-        'dataset': {
-          'field': {
-            'name': 'dataset',
-            'kind': 'string',
-            'order': 2,
-            'default': '',
-            'description': 'Google BigQuery dataset to create tables in.'
-          }
-        }
-      }
-    }
-  },
-  {
-    'barnacle': {
-      'description': 'Will create tables with format CM_* to hold each endpoint via a call to the API list function. Reports run long so seperate task.',
-      'hour': [
-        3
-      ],
-      'auth': {
-        'field': {
-          'name': 'auth_read',
-          'kind': 'authentication',
-          'order': 0,
-          'default': 'user',
-          'description': 'Credentials used for reading data.'
-        }
-      },
-      'endpoints': [
-      ],
       'reports': {
         'field': {
           'name': 'reports',
@@ -208,9 +146,9 @@ TASKS = [
         },
         'dataset': {
           'field': {
-            'name': 'dataset',
+            'name': 'recipe_slug',
             'kind': 'string',
-            'order': 2,
+            'order': 4,
             'default': '',
             'description': 'Google BigQuery dataset to create tables in.'
           }
@@ -246,7 +184,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -260,7 +198,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -274,7 +212,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -288,7 +226,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -298,7 +236,7 @@ TASKS = [
       'to': {
         'dataset': {
           'field': {
-            'name': 'dataset',
+            'name': 'recipe_slug',
             'kind': 'string',
             'description': 'Place where tables will be written in BigQuery.'
           }
@@ -335,7 +273,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -349,7 +287,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -363,7 +301,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -373,7 +311,7 @@ TASKS = [
       'to': {
         'dataset': {
           'field': {
-            'name': 'dataset',
+            'name': 'recipe_slug',
             'kind': 'string',
             'description': 'Place where tables will be written in BigQuery.'
           }
@@ -410,7 +348,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -424,7 +362,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -438,7 +376,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -448,7 +386,7 @@ TASKS = [
       'to': {
         'dataset': {
           'field': {
-            'name': 'dataset',
+            'name': 'recipe_slug',
             'kind': 'string',
             'description': 'Place where tables will be written in BigQuery.'
           }
@@ -485,7 +423,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -499,7 +437,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -509,7 +447,7 @@ TASKS = [
       'to': {
         'dataset': {
           'field': {
-            'name': 'dataset',
+            'name': 'recipe_slug',
             'kind': 'string',
             'description': 'Place where tables will be written in BigQuery.'
           }
@@ -546,7 +484,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -560,7 +498,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -574,7 +512,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -584,7 +522,7 @@ TASKS = [
       'to': {
         'dataset': {
           'field': {
-            'name': 'dataset',
+            'name': 'recipe_slug',
             'kind': 'string',
             'description': 'Place where tables will be written in BigQuery.'
           }
@@ -621,7 +559,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -635,7 +573,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -649,7 +587,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -663,7 +601,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -673,7 +611,7 @@ TASKS = [
       'to': {
         'dataset': {
           'field': {
-            'name': 'dataset',
+            'name': 'recipe_slug',
             'kind': 'string',
             'description': 'Place where tables will be written in BigQuery.'
           }
@@ -710,7 +648,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -724,7 +662,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -738,7 +676,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -752,7 +690,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -766,7 +704,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -776,7 +714,7 @@ TASKS = [
       'to': {
         'dataset': {
           'field': {
-            'name': 'dataset',
+            'name': 'recipe_slug',
             'kind': 'string',
             'description': 'Place where tables will be written in BigQuery.'
           }
@@ -813,7 +751,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -827,7 +765,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -841,7 +779,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -855,7 +793,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -865,7 +803,7 @@ TASKS = [
       'to': {
         'dataset': {
           'field': {
-            'name': 'dataset',
+            'name': 'recipe_slug',
             'kind': 'string',
             'description': 'Place where tables will be written in BigQuery.'
           }
@@ -902,7 +840,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -916,7 +854,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -930,7 +868,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -944,7 +882,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -958,7 +896,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -968,7 +906,7 @@ TASKS = [
       'to': {
         'dataset': {
           'field': {
-            'name': 'dataset',
+            'name': 'recipe_slug',
             'kind': 'string',
             'description': 'Place where tables will be written in BigQuery.'
           }
@@ -1005,7 +943,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -1019,7 +957,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -1033,7 +971,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -1047,7 +985,7 @@ TASKS = [
           },
           {
             'field': {
-              'name': 'dataset',
+              'name': 'recipe_slug',
               'kind': 'string',
               'description': 'Place where tables will be written in BigQuery.'
             }
@@ -1057,7 +995,7 @@ TASKS = [
       'to': {
         'dataset': {
           'field': {
-            'name': 'dataset',
+            'name': 'recipe_slug',
             'kind': 'string',
             'description': 'Place where tables will be written in BigQuery.'
           }

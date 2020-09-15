@@ -1,5 +1,5 @@
 ###########################################################################
-# 
+#
 #  Copyright 2018 Google LLC
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -72,7 +72,7 @@ import json
 import argparse
 
 from starthinker.util.project import get_project
-from starthinker.script.parse import json_get_fields, json_set_fields, json_set_instructions, json_set_description, json_expand_includes
+from starthinker.script.parse import json_get_fields, json_set_fields, json_set_instructions, json_set_description
 
 
 def parser_add_field(parser, field):
@@ -95,7 +95,11 @@ def parser_add_field(parser, field):
   elif field['kind'] == 'email':
     parser.add_argument('--' + field['name'], help=field.get('description', 'No instructions.'), default=field.get('default', ''))
   elif field['kind'] == 'authentication':
-    parser.add_argument('--' + field['name'], help=field.get('description', 'No instructions.'), default=field.get('default', ''), choices=['user', 'service'])
+    parser.add_argument(
+        '--' + field['name'],
+        help=field.get('description', 'No instructions.'),
+        default=field.get('default', ''),
+        choices=['user', 'service'])
   elif field['kind'] == 'integer':
     parser.add_argument('--' + field['name'], type=int, help=field.get('description', 'No instructions.'), default=field.get('default', ''))
   elif field['kind'] == 'boolean':
@@ -120,16 +124,13 @@ def script_write(script, args, filepath=None):
   # insert fields into json
   json_set_fields(script, args)
 
-  # Expand all includes to full recipe
-  json_expand_includes(script)
-
   # insert variables into instructions
   json_set_instructions(script, args)
 
   # insert variables into description
   json_set_description(script, args)
 
-  # produce output or run task 
+  # produce output or run task
   if filepath:
     with open(filepath, 'w') as data_file:
       data_file.write(json.dumps(script, indent=2))
@@ -149,21 +150,25 @@ def script_interactive():
   # parse fields and constants into parameters
   fields = json_get_fields(script)
 
-  print('-' * 60) 
+  print('-' * 60)
   if to_json:
-    print('(1 of %d) From %s template create recipe: %s\n' % (len(fields), from_json, to_json))
+    print('(1 of %d) From %s template create recipe: %s\n' %
+          (len(fields), from_json, to_json))
   else:
-    print('(1 of %d) Recipe file to create from %s template.\n' % (len(fields), sys.argv[1]))
-    to_json = input("Full Path TO JSON File:") 
+    print('(1 of %d) Recipe file to create from %s template.\n' %
+          (len(fields), sys.argv[1]))
+    to_json = input("Full Path TO JSON File:")
 
   for count, field in enumerate(fields):
     print('')
-    print('-' * 60) 
+    print('-' * 60)
     print('(%d of %d) %s%s%s' % (
-      count + 2, 
-      len(fields), field['description'],
-      ','.join(field['choices']) if 'choices' in field else '',
-      (' Default to "%s" if blank.' % field['default']) if 'default' in field else '',
+        count + 2,
+        len(fields),
+        field['description'],
+        ','.join(field['choices']) if 'choices' in field else '',
+        (' Default to "%s" if blank.' %
+         field['default']) if 'default' in field else '',
     ))
     args[field['name']] = input("%s ( %s ):" % (field['name'], field['kind']))
 
@@ -195,7 +200,7 @@ def script_commandline():
 def main():
   # invalid command line
   if len(sys.argv) < 2:
-    print("USAGE: run.py [json recipe template file path] [-h]")
+    print('USAGE: run.py [json recipe template file path] [-h]')
 
   # only script, json and optional destination supplied, assume interactive
   elif len(sys.argv) == 2 or (len(sys.argv) == 3 and sys.argv[2] != '-h'):
@@ -206,5 +211,5 @@ def main():
     script_commandline()
 
 
-if __name__ == "__main__":
- main()
+if __name__ == '__main__':
+  main()

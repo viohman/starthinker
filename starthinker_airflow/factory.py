@@ -1,5 +1,5 @@
 ###########################################################################
-# 
+#
 #  Copyright 2019 Google Inc.
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,7 +39,7 @@ from airflow import DAG
 from airflow.hooks.base_hook import BaseHook
 from airflow.operators.python_operator import PythonOperator
 
-from starthinker.script.parse import json_set_fields, json_expand_includes
+from starthinker.script.parse import json_set_fields
 
 
 class DAG_Factory():
@@ -63,7 +63,6 @@ class DAG_Factory():
     self.dag_name = _dag_name
     self.recipe = _script
     if _script_parameters: json_set_fields(self.recipe, _script_parameters)
-    json_expand_includes(self.recipe)
     self.dag = None
 
 
@@ -108,7 +107,7 @@ class DAG_Factory():
     PythonOperator(
       task_id='%s_%d' % (function, instance),
       python_callable = getattr(import_module('starthinker.task.%s.run' % function), function),
-      op_kwargs = {'recipe': self.recipe, 'instance':instance},
+      op_kwargs = {'recipe': self.recipe, 'instance': instance},
       dag=self.dag
     )
 
@@ -122,10 +121,10 @@ class DAG_Factory():
       af_source = 'starthinker_airflow.operators'
 
     operator = getattr(import_module('%s.%s' % (af_source, af_module)), af_operator)
-    
-    af_parameters['dag'] = self.dag 
+
+    af_parameters['dag'] = self.dag
     af_parameters['task_id'] = '%s_%d' % (function, instance)
-     
+
     operator(**af_parameters)
 
 
@@ -169,7 +168,7 @@ class DAG_Factory():
     print('')
     print('DAG: %s' % self.dag_name)
     print('')
- 
+
     instances = {}
     for task in self.recipe['tasks']:
       function = next(iter(task.keys()))
