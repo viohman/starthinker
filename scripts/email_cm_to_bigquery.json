@@ -44,6 +44,7 @@
         "subject": {"field":{ "name":"subject", "kind":"string", "order":2, "default":".*", "description":"Regular expression to match subject. Double escape backslashes." }},
         "attachment":".*",
         "out":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "bigquery":{
             "dataset":{"field":{ "name":"dataset", "kind":"string", "order":3, "default":"", "description":"Existing dataset in BigQuery." }},
             "table":{"field":{ "name":"table", "kind":"string", "order":4, "default":"", "description":"Name of table to be written to." }},

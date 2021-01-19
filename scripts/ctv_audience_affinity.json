@@ -81,8 +81,9 @@
             }
           }
         },
-        "out": {
-          "bigquery": {
+        "out":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
+          "bigquery":{
             "dataset": { "field": { "name": "dataset", "kind": "string", "order": 3, "default": "", "description": "BigQuery Dataset where all data will live." }},
             "schema": [
               {
@@ -152,8 +153,9 @@
             }
           }
         },
-        "out": {
-          "bigquery": {
+        "out":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
+          "bigquery":{
             "dataset": { "field": { "name": "dataset", "kind": "string", "order": 3, "default": "", "description": "BigQuery Dataset where all data will live." }},
             "schema": [
               {
@@ -240,8 +242,9 @@
             }
           }
         },
-        "out": {
-          "bigquery": {
+        "out":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
+          "bigquery":{
             "dataset": { "field": { "name": "dataset", "kind": "string", "order": 3, "default": "", "description": "BigQuery Dataset where all data will live." }},
             "schema": [
               {
@@ -338,8 +341,9 @@
             }
           }
         },
-        "out": {
-          "bigquery": {
+        "out":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
+          "bigquery":{
             "dataset": { "field": { "name": "dataset", "kind": "string", "order": 3, "default": "", "description": "BigQuery Dataset where all data will live." }},
             "schema": [
               {

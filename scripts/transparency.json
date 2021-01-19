@@ -123,9 +123,9 @@
         "account":{"field":{ "name":"dcm_account", "kind":"integer", "order":2, "default":"", "description":"CM account id of client." }},
         "name":{"field":{ "name":"recipe_name", "kind":"string", "prefix":"Transparency Domain For ", "description":"Name of report in CM, should be unique." }}
       }, 
-      "out": {
-        "bigquery": {
-          "auth": "service", 
+      "out":{
+        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
+        "bigquery":{
           "dataset":{"field":{ "name":"recipe_slug", "kind":"string", "order":1, "default":"", "description":"Name of Google BigQuery dataset to create." }},
           "table": "Transparency_Domain_KPI"
         }
@@ -138,9 +138,9 @@
         "account":{"field":{ "name":"dcm_account", "kind":"integer", "order":2, "default":"", "description":"CM account id of client." }},
         "name":{"field":{ "name":"recipe_name", "kind":"string", "prefix":"Transparency App For ", "description":"Name of report in CM, should be unique." }}
       }, 
-      "out": {
-        "bigquery": {
-          "auth": "service", 
+      "out":{
+        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
+        "bigquery":{
           "dataset":{"field":{ "name":"recipe_slug", "kind":"string", "order":1, "default":"", "description":"Name of Google BigQuery dataset to create." }},
           "table": "Transparency_App_KPI"
         }
@@ -148,7 +148,7 @@
     }},
     { "bigquery": {
       "hour":[5],
-      "auth": "user",
+      "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
       "to": {
         "dataset":{"field":{ "name":"recipe_slug", "kind":"string", "order":1, "default":"", "description":"Name of Google BigQuery dataset to create." }},
         "view": "Transparency_Combined_KPI"

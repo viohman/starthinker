@@ -25,6 +25,7 @@
       "password":{"field":{ "name":"password", "kind":"password", "default":"", "description":"Your Salesforce login password." }},
       "query":{"field":{ "name":"query", "kind":"string", "default":"", "description":"The query to run in Salesforce." }},
       "out":{
+        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
           "dataset":{"field":{ "name":"dataset", "kind":"string", "order":3, "default":"", "description":"Existing BigQuery dataset." }},
           "table":{"field":{ "name":"table", "kind":"string", "order":4, "default":"", "description":"Table to create from this report." }},

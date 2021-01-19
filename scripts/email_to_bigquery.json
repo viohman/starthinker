@@ -26,6 +26,7 @@
         "attachment":{"field":{ "name":"attachment", "kind":"string", "order":5, "default":"", "description":"Regular expression to match atttachment." }}
       },
       "out":{
+        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
           "dataset":{"field":{ "name":"dataset", "kind":"string", "order":6, "default":"", "description":"Existing dataset in BigQuery." }},
           "table":{"field":{ "name":"table", "kind":"string", "order":7, "default":"", "description":"Name of table to be written to." }},

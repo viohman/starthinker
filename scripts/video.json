@@ -37,6 +37,7 @@
         "tab":{"field":{ "name":"tab", "kind":"string", "order":2, "default":"", "description":"Name of sheet tab." }}
       },
       "bigquery":{
+        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "project":{"field":{ "name":"project", "kind":"string", "order":3, "default":"", "description":"Google Cloud Project Identifier." }},
         "dataset":{"field":{ "name":"dataset", "kind":"string", "order":4, "default":"", "description":"Name of dataset." }},
         "table":{"field":{ "name":"table", "kind":"string", "order":5, "default":"", "description":"Name of table." }}
