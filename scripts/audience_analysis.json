@@ -88,13 +88,13 @@
     }},
     { "dbm": {
       "hour":[6],
-      "auth": "user", 
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }}, 
       "report": {
         "name": {"field":{ "name":"recipe_name", "kind":"string", "prefix":"Audience Analysis Performance ", "description":"Name of report in DV360, should be unique." }}
       },
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be created in BigQuery." }},
           "table": "DV360_Audience_Performance",
           "schema": [
@@ -154,13 +154,13 @@
     }},
     { "dbm": {
       "hour":[6],
-      "auth": "user", 
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }}, 
       "report": {
         "name": {"field":{ "name":"recipe_name", "kind":"string", "prefix":"Audience Analysis First Party", "description":"Name of report in DV360, should be unique." }}
       },
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be created in BigQuery." }},
           "table": "DV360_First_Party_Audience",
           "schema": [
@@ -215,13 +215,13 @@
     }},
     { "dbm": {
       "hour":[6],
-      "auth": "user", 
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }}, 
       "report": {
         "name": {"field":{ "name":"recipe_name", "kind":"string", "prefix":"Audience Analysis Google", "description":"Name of report in DV360, should be unique." }}
       },
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be created in BigQuery." }},
           "table": "DV360_Google_Audience",
           "schema": [
@@ -276,13 +276,13 @@
     }},
     { "dbm": {
       "hour":[6],
-      "auth": "user", 
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }}, 
       "report": {
         "name": {"field":{ "name":"recipe_name", "kind":"string", "prefix":"Audience Analysis Third Party", "description":"Name of report in DV360, should be unique." }}
       },
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be created in BigQuery." }},
           "table": "DV360_Third_Party_Audience",
           "schema": [
