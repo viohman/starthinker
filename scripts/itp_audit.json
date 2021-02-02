@@ -100,7 +100,7 @@
       "delete": false
     }},
     { "dcm":{
-      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":1, "default":"user", "description":"Credentials used for reading data." }},
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }},
       "report":{
         "timeout": 90,
         "account": {"field":{ "name":"cm_account_id", "kind":"string", "order":2, "default": "", "description":"Campaign Manager Account Id." }},
@@ -173,8 +173,8 @@
         }
       },
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "order":1, "default": "ITP_Audit_Dashboard", "description":"BigQuery dataset for store dashboard tables." }},
           "table":"z_Floodlight_CM_Report",
           "is_incremental_load":false
@@ -341,13 +341,13 @@
       }
     }},
     { "dbm":{
-      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":1, "default":"user", "description":"Credentials used for reading data." }},
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }},
       "report":{
         "name":{"field":{ "name":"recipe_name", "kind":"string", "prefix":"ITP_Audit_Browser_", "order":1, "description":"Name of report in DV360, should be unique." }}
       },
     "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "order":1, "default":"ITP_Audit_Dashboard", "description":"BigQuery dataset for store dashboard tables." }},
           "table": "z_Dv360_Browser_Report_Dirty"
         }

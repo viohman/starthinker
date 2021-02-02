@@ -37,15 +37,15 @@
   },
   "tasks":[
     { "email":{
-      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":1, "default":"user", "description":"Credentials used for reading data." }},
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }},
       "read":{
         "from":"noreply-cm@google.com",
         "to": {"field":{ "name":"email", "kind":"string", "order":1, "default":"", "description":"Email address report was sent to." }},
         "subject": {"field":{ "name":"subject", "kind":"string", "order":2, "default":".*", "description":"Regular expression to match subject. Double escape backslashes." }},
         "attachment":".*",
         "out":{
-          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "bigquery":{
+            "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
             "dataset":{"field":{ "name":"dataset", "kind":"string", "order":3, "default":"", "description":"Existing dataset in BigQuery." }},
             "table":{"field":{ "name":"table", "kind":"string", "order":4, "default":"", "description":"Name of table to be written to." }},
             "is_incremental_load":{"field":{ "name":"is_incremental_load", "kind":"boolean", "order":6, "default":false, "description":"Append report data to table based on date column, de-duplicates." }}

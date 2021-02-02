@@ -17,7 +17,7 @@
   },
   "tasks":[
     { "email":{
-      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":1, "default":"user", "description":"Credentials used for reading data." }},
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }},
       "read":{
         "from":{"field":{ "name":"email_from", "kind":"string", "order":1, "default":"", "description":"Must match from field." }},
         "to":{"field":{ "name":"email_to", "kind":"string", "order":2, "default":"", "description":"Must match to field." }},
@@ -26,8 +26,8 @@
         "attachment":{"field":{ "name":"attachment", "kind":"string", "order":5, "default":"", "description":"Regular expression to match atttachment." }}
       },
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset":{"field":{ "name":"dataset", "kind":"string", "order":6, "default":"", "description":"Existing dataset in BigQuery." }},
           "table":{"field":{ "name":"table", "kind":"string", "order":7, "default":"", "description":"Name of table to be written to." }},
           "schema":{"field":{ "name":"dbm_schema", "kind":"json", "order":8, "default":"[]", "description":"Schema provided in JSON list format or empty list." }},

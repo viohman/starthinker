@@ -148,13 +148,13 @@
     }},
     { "dbm": {
       "hour":[6],
-      "auth": "user", 
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }},
       "report": {
         "name": {"field":{ "name":"recipe_name", "kind":"string", "prefix":"Feature Adoption Spend For ", "description":"Name of report in DV360, should be unique." }}
       },
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be created in BigQuery." }},
           "table": "DV360_Feature_Spend",
           "is_incremental_load":true,
@@ -186,13 +186,13 @@
     }},
     { "dbm": {
       "hour":[6],
-      "auth": "user", 
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }},
       "report": {
         "name": {"field":{ "name":"recipe_name", "kind":"string", "prefix":"Feature Adoption Environment For ", "description":"Name of report in DV360, should be unique." }}
       },
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be created in BigQuery." }},
           "table": "DV360_Feature_Environment",
           "is_incremental_load":true,
@@ -222,7 +222,7 @@
     }},
     { "sdf_legacy": {
       "hour":[4],
-      "auth": "user",
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }},
       "version": "5",
       "file_types": ["LINE_ITEM"],
       "filter_type": "ADVERTISER_ID",
@@ -231,15 +231,15 @@
       },
       "daily": true,
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be created in BigQuery." }}
         }
       }
     }},
     { "sdf_legacy": {
       "hour":[4],
-      "auth": "user",
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }},
       "version": "5",
       "file_types": ["INSERTION_ORDER"],
       "filter_type": "ADVERTISER_ID",
@@ -249,8 +249,8 @@
       },
       "daily": true,
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be created in BigQuery." }}
         }
       }

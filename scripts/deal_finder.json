@@ -106,8 +106,8 @@
         "timeout":10
       },
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset":{"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be written in BigQuery." }},
           "table":"Deal_Finder_DV360_Report",
           "schema":[

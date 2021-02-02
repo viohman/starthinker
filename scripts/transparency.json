@@ -148,7 +148,7 @@
     }},
     { "bigquery": {
       "hour":[5],
-      "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
+      "auth": "service",
       "to": {
         "dataset":{"field":{ "name":"recipe_slug", "kind":"string", "order":1, "default":"", "description":"Name of Google BigQuery dataset to create." }},
         "view": "Transparency_Combined_KPI"

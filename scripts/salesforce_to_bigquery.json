@@ -17,7 +17,7 @@
   },
   "tasks":[
     { "salesforce": {
-      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":1, "default":"user", "description":"Credentials used for reading data." }},
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }},
       "domain":{"field":{ "name":"domain", "kind":"string", "default":"login.salesforce.com", "description":"Retrieve from a Salesforce Domain." }},
       "client":{"field":{ "name":"client", "kind":"string", "default":"", "description":"Retrieve from a Salesforce App." }},
       "secret":{"field":{ "name":"secret", "kind":"string", "default":"", "description":"Retrieve from a Salesforce App." }},
@@ -25,8 +25,8 @@
       "password":{"field":{ "name":"password", "kind":"password", "default":"", "description":"Your Salesforce login password." }},
       "query":{"field":{ "name":"query", "kind":"string", "default":"", "description":"The query to run in Salesforce." }},
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset":{"field":{ "name":"dataset", "kind":"string", "order":3, "default":"", "description":"Existing BigQuery dataset." }},
           "table":{"field":{ "name":"table", "kind":"string", "order":4, "default":"", "description":"Table to create from this report." }},
           "schema":{"field":{ "name":"schema", "kind":"json", "order":5, "default":"[]", "description":"Schema provided in JSON list format or empty list." }}

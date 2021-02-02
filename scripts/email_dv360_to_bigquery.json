@@ -37,7 +37,7 @@
   },
   "tasks":[
     { "email":{
-      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":1, "default":"user", "description":"Credentials used for reading data." }},
+      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }},
       "read":{
         "from":"noreply-dv360@google.com",
         "to": {"field":{ "name":"email", "kind":"string", "order":1, "default":"", "description":"Email address report was sent to." }},
@@ -45,8 +45,8 @@
         "link":"https://storage.googleapis.com/.*",
         "attachment":".*",
         "out":{
-          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "bigquery":{
+            "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
             "dataset":{"field":{ "name":"dataset", "kind":"string", "order":3, "default":"", "description":"Existing dataset in BigQuery." }},
             "table":{"field":{ "name":"table", "kind":"string", "order":4, "default":"", "description":"Name of table to be written to." }},
             "schema":{"field":{ "name":"dbm_schema", "kind":"json", "order":5, "default":"[]", "description":"Schema provided in JSON list format or empty list." }},

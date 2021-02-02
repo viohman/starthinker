@@ -41,8 +41,8 @@
         "tab":"Accounts"
       },
       "out":{
-        "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
         "bigquery":{
+          "auth":{"field":{ "name":"auth_write", "kind":"authentication", "order":1, "default":"service", "description":"Credentials used for writing data." }},
           "dataset":{"field":{ "name":"recipe_slug", "kind":"string", "order":4, "default":"" }},
           "is_incremental_load":{"field":{ "name":"Aggregate", "kind":"boolean", "order":7, "default":false, "description":"Append report data to existing table, requires Date column." }}
         }
