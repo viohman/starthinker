@@ -93,6 +93,7 @@ def add_seekable_to_file(f):
 def sdf_to_bigquery(sdf_zip_file, project_id, dataset, time_partitioned_table, create_single_day_table, table_suffix=''):
   with zipfile.ZipFile(sdf_zip_file, 'r', zipfile.ZIP_DEFLATED) as d: 
     file_names = d.namelist()
+    file_names = [name for name in file_names if not 'Skipped' in name]
     for file_name  in file_names:
       if project.verbose: print('SDF: Loading: ' + file_name)
       with d.open(file_name) as sdf_file:
@@ -105,7 +106,7 @@ def sdf_to_bigquery(sdf_zip_file, project_id, dataset, time_partitioned_table, c
 
         # Check if each SDF should have a dated table
         if create_single_day_table:
-          table_name_dated = table_name + date.today().strftime("%Y_%m_%d")
+          table_name_dated = table_name + "_" + date.today().strftime("%Y_%m_%d")
           
           # Create table and upload data
           table_create('service', project_id, dataset, table_name_dated)    

@@ -34,7 +34,7 @@
   },
   "tasks":[
     { "floodlight_monitor": {
-      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":1, "default":"user", "description":"Credentials used for reading data." }},
+      "auth":"service",
       "account":{"field":{ "name":"dcm_account", "kind":"string", "order":1, "default":"", "description":"Specify an account_id as a number." }},
       "template":{
         "template":{

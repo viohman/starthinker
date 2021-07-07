@@ -148,17 +148,15 @@
     }},
     { "dbm": {
       "hour":[6],
-      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }},
+      "auth": "user", 
       "report": {
         "name": {"field":{ "name":"recipe_name", "kind":"string", "prefix":"Feature Adoption Spend For ", "description":"Name of report in DV360, should be unique." }}
       },
-      "out":{
-        "bigquery":{
-          "auth":"service",
+      "out": {
+        "bigquery": {
           "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be created in BigQuery." }},
           "table": "DV360_Feature_Spend",
           "is_incremental_load":true,
-          "header":true,
           "schema": [
             { "name": "Advertiser_Id", "type": "INTEGER" },
             { "name": "Advertiser", "type": "STRING" },
@@ -187,17 +185,15 @@
     }},
     { "dbm": {
       "hour":[6],
-      "auth":{"field":{ "name":"auth_read", "kind":"authentication", "order":0, "default":"user", "description":"Credentials used for reading data." }},
+      "auth": "user", 
       "report": {
         "name": {"field":{ "name":"recipe_name", "kind":"string", "prefix":"Feature Adoption Environment For ", "description":"Name of report in DV360, should be unique." }}
       },
-      "out":{
-        "bigquery":{
-          "auth":"service",
+      "out": {
+        "bigquery": {
           "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be created in BigQuery." }},
           "table": "DV360_Feature_Environment",
           "is_incremental_load":true,
-          "header":true,
           "schema": [
             { "name": "Advertiser_Id", "type": "INTEGER" },
             { "name": "Advertiser", "type": "STRING" },
@@ -222,47 +218,38 @@
         }
       }
     }},
-    { "sdf":{
-        "hour":[4],
-        "auth": "user",
-        "version":"SDF_VERSION_5",
-        "partner_id":{"field":{ "name":"partner_id", "kind":"integer", "order":1,"description":"DV Partner ID"}},
-        "file_types": ["FILE_TYPE_LINE_ITEM"],
-        "filter_type": "FILTER_TYPE_ADVERTISER_ID",
+    { "sdf_legacy": {
+      "hour":[4],
+      "auth": "user",
+      "version": "5",
+      "file_types": ["LINE_ITEM"],
+      "filter_type": "ADVERTISER_ID",
+      "read": {
+        "filter_ids": {"values": {"field":{ "name":"advertisers", "kind":"integer_list", "order":6, "default":[], "description":"Comma delimited list of DV360 advertiser ids." }} }
+      },
+      "daily": true,
+      "out": {
+        "bigquery": {
+          "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be created in BigQuery." }}
+        }
+      }
+    }},
+    { "sdf_legacy": {
+      "hour":[4],
+      "auth": "user",
+      "version": "5",
+      "file_types": ["INSERTION_ORDER"],
+      "filter_type": "ADVERTISER_ID",
         "read": { 
-          "filter_ids":{
-            "values":{
-              "field":{ "name":"advertisers", "kind":"integer_list", "order":6, "default":[], "description":"Comma delimited list of DV360 advertiser ids." }  
-            }
-          }
-        },
-        "sdf_legacy": true,
-        "daily": true,
-        "bigquery_auth": "service",
-        "time_partitioned_table":{"field":{ "name":"time_partitioned_table", "kind":"boolean", "order":7, "default":false, "description":"Is the end table a time partitioned" }},
-        "create_single_day_table":{"field":{ "name":"create_single_day_table", "kind":"boolean", "order":8, "default":true, "description":"Would you like a separate table for each day? This will result in an extra table each day and the end table with the most up to date SDF." }},
-        "dataset":{"field":{ "name":"dataset", "kind":"string", "order":6, "default":"", "description":"Dataset to be written to in BigQuery." }}
-      }},
-    { "sdf":{
-    "hour":[4],
-    "auth": "user",
-    "version":"SDF_VERSION_5",
-    "partner_id":{"field":{ "name":"partner_id", "kind":"integer", "order":1,"description":"DV Partner ID"}},
-    "file_types": ["FILE_TYPE_INSERTION_ORDER"],
-    "filter_type": "FILTER_TYPE_ADVERTISER_ID",
-    "read": { 
-        "filter_ids":{
-        "values":{
-            "field":{ "name":"advertisers", "kind":"integer_list", "order":6, "default":[], "description":"Comma delimited list of DV360 advertiser ids." }  
+          "filter_ids": {"values": {"field":{ "name":"advertisers", "kind":"integer_list", "order":6, "default":[], "description":"Comma delimited list of DV360 advertiser ids." }} 
         }
+      },
+      "daily": true,
+      "out": {
+        "bigquery": {
+          "dataset": {"field":{ "name":"recipe_slug", "kind":"string", "description":"Place where tables will be created in BigQuery." }}
         }
-    },
-    "sdf_legacy": true,
-    "daily": true,
-    "bigquery_auth": "service",
-    "time_partitioned_table":{"field":{ "name":"time_partitioned_table", "kind":"boolean", "order":7, "default":false, "description":"Is the end table a time partitioned" }},
-    "create_single_day_table":{"field":{ "name":"create_single_day_table", "kind":"boolean", "order":8, "default":true, "description":"Would you like a separate table for each day? This will result in an extra table each day and the end table with the most up to date SDF." }},
-    "dataset":{"field":{ "name":"dataset", "kind":"string", "order":6, "default":"", "description":"Dataset to be written to in BigQuery." }}
+      }
     }},
     { "bigquery": {
       "hour":[6],
@@ -320,7 +307,7 @@ SELECT
   IF (Type = 'TrueView', Revenue_Adv_Currency, 0) AS TrueView_Rev,
   IF (Type = 'Audio', Revenue_Adv_Currency, 0) AS Audio_Rev,
   IF ((STRPOS(Environment_Targeting, 'Desktop')>0), Revenue_Adv_Currency, 0) AS Desktop_Rev
-  FROM `[PARAMETER].[PARAMETER].SDF_LineItems` AS a 
+  FROM `[PARAMETER].[PARAMETER].SDF_LINE_ITEM` AS a 
   LEFT JOIN `[PARAMETER].[PARAMETER].DV360_Feature_Spend` AS b 
     ON DATE_SUB(a.SDF_Day, INTERVAL 1 DAY) = b.Report_Day
     AND a.Line_Item_Id = b.Line_Item_Id 
